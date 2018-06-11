@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "chingu-angular"
+    "default": "chingu-angular",
+    "staging": "chingu-angular-staging"
   }
 }

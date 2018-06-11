@@ -4,7 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project on the web
 
-[https://chingu-angular.firebaseapp.com/](https://chingu-angular.firebaseapp.com/)
+Our production app [https://chingu-angular.firebaseapp.com/](https://chingu-angular.firebaseapp.com/).
+Our development app [https://chingu-angular-staging.firebaseapp.com/](https://chingu-angular-staging.firebaseapp.com/).
 
 ## Development server
 
@@ -17,6 +18,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/browser` directory. Use the `--prod` flag for a production build.
+
+## Switching between firebase environments
+
+Run `firebase use default` to switch to production environment. Run `firebase use staging` to switch to development environment.
 
 ## Deploy
 

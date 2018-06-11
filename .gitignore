@@ -40,3 +40,6 @@ Thumbs.db
 
 # Firebase
 firebase.debug.log
+
+# Environment
+/src/environments/

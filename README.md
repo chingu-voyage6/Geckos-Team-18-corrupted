@@ -1,3 +1,5 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/chingu-voyage6/Geckos-Team-18.svg?columns=all)](https://waffle.io/chingu-voyage6/Geckos-Team-18)
+
 # ChinguAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.

@@ -8,9 +8,10 @@ import { AngularFireModule } from 'angularfire2';
 
 import { environment } from '../environments/environment';
 
+import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './modules/core/core.module';
 
-import { AppComponent } from './components/app/app.component';
+import { AppComponent } from './modules/core/components/app/app.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { AppComponent } from './components/app/app.component';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    CoreModule
+    CoreModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

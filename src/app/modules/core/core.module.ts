@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { CoreRoutingModule } from './routing/core-routing/core-routing.module';
+import { MaterialModule } from '../material/material.module';
 
+import { TestComponent } from './components/test/test.component';
 import { CoreComponent } from './components/core/core.component';
 
 @NgModule({
-  imports: [CommonModule, CoreRoutingModule],
-  declarations: [CoreComponent],
-  exports: [CoreComponent]
+  imports: [CommonModule, RouterModule, MaterialModule],
+  declarations: [CoreComponent, TestComponent],
+  exports: [CoreComponent],
+  bootstrap: [CoreComponent]
 })
 export class CoreModule {}

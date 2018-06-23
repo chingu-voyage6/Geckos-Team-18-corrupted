@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 
 import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './modules/core/core.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 import { AppComponent } from './modules/core/components/app/app.component';
 
@@ -36,9 +37,14 @@ import { RegisterComponent } from './modules/core/components/register';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     CoreModule,
+<<<<<<< HEAD
     ReactiveFormsModule,
     HttpClientModule,
     RoutingModule
+=======
+    RoutingModule,
+    AuthModule
+>>>>>>> login
   ],
   providers: [
         AuthGuard,

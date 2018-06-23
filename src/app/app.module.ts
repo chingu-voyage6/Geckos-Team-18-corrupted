@@ -12,6 +12,7 @@ import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './modules/core/core.module';
 
 import { AppComponent } from './modules/core/components/app/app.component';
+import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,8 @@ import { AppComponent } from './modules/core/components/app/app.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     CoreModule,
-    RoutingModule
+    RoutingModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

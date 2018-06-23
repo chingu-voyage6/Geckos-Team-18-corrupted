@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 
 import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './modules/core/core.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 import { AppComponent } from './modules/core/components/app/app.component';
 
@@ -20,7 +21,8 @@ import { AppComponent } from './modules/core/components/app/app.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     CoreModule,
-    RoutingModule
+    RoutingModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

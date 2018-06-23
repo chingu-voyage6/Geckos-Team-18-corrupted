@@ -37,14 +37,9 @@ import { RegisterComponent } from './modules/core/components/register';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     CoreModule,
-<<<<<<< HEAD
     ReactiveFormsModule,
     HttpClientModule,
     RoutingModule
-=======
-    RoutingModule,
-    AuthModule
->>>>>>> login
   ],
   providers: [
         AuthGuard,

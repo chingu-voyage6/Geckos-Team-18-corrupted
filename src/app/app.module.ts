@@ -10,9 +10,9 @@ import { environment } from '../environments/environment';
 
 import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './modules/core/core.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 import { AppComponent } from './modules/core/components/app/app.component';
-import { AuthModule } from './modules/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],

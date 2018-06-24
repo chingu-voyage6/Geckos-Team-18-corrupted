@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from '../material/material.module';
+import { RoutingModule } from './routing/routing.module';
 
-import { TestComponent } from './components/test/test.component';
 import { CoreComponent } from './components/core/core.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { LayoutTestComponent } from './components/layout-test/layout-test.component';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MaterialModule, HttpClientModule],
-  declarations: [CoreComponent, TestComponent, ToolbarComponent, LogoComponent],
-  exports: [CoreComponent, TestComponent, ToolbarComponent]
+  imports: [CommonModule, RoutingModule, MaterialModule, HttpClientModule],
+  declarations: [
+    CoreComponent,
+    ToolbarComponent,
+    LogoComponent,
+    LayoutTestComponent
+  ],
+  exports: [CoreComponent, ToolbarComponent, LogoComponent, LayoutTestComponent]
 })
 export class CoreModule {}

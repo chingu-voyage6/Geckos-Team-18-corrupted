@@ -15,7 +15,7 @@ export class LogoComponent implements OnInit {
   ) {
     this.matIconRegistry.addSvgIcon(
       'breezycards',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('/src/assets/logochingu_sm.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/logochingu_sm.svg')
     );
   }
   ngOnInit() {

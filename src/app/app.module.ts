@@ -19,11 +19,10 @@ import { AppComponent } from './modules/core/components/app/app.component';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    CoreModule,
     RoutingModule,
+    CoreModule,
     AuthModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

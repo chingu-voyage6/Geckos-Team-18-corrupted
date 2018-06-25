@@ -71,14 +71,23 @@ export class AuthService {
   }
 
   emailSignIn(email: string, password: string) {
-    return this.afAuth.auth
+    this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then(user => {
-        return this.setUserDoc(user);
+        this.getUser(user);
       })
       .catch(error => {
         console.log(error);
       });
+  }
+
+  //TODO check constructor if it can be merged
+  getUser(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+      `users/${user.uid}`
+    );
+
+    this.user = userRef.valueChanges();
   }
 
   updateUser(user: User, data: any) {

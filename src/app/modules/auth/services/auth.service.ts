@@ -34,6 +34,16 @@ export class AuthService {
     );
   }
 
+  anonymousSignIn() {
+    return this.afAuth.auth.signInAnonymously()
+      .then(user => {
+        return this.setUserDoc(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   emailSignUp(email: string, password: string) {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)

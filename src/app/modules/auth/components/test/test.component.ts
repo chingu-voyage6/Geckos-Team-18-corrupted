@@ -52,6 +52,10 @@ export class TestComponent implements OnInit {
     return this.auth.emailSignIn(this.email.value, this.password.value);
   }
 
+  anonymousSignIn() {
+    return this.auth.anonymousSignIn();
+  }
+
   googleSignIn() {
     return this.auth.googleSignIn();
   }

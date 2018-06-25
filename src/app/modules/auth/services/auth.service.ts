@@ -63,7 +63,17 @@ export class AuthService {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(user => {
-        console.log(user);
+        return this.setUserDoc(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  emailSignIn(email: string, password: string) {
+    return this.afAuth.auth
+      .signInWithEmailAndPassword(email, password)
+      .then(user => {
         return this.setUserDoc(user);
       })
       .catch(error => {

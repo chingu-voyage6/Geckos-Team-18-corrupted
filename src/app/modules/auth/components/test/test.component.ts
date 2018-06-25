@@ -30,7 +30,7 @@ export class TestComponent implements OnInit {
     });
 
     this.detailForm = this.fb.group({
-      displayName: [['', [Validators.required]]]
+      displayName: ['', [Validators.required]]
     });
   }
 
@@ -46,6 +46,26 @@ export class TestComponent implements OnInit {
 
   signup() {
     return this.auth.emailSignUp(this.email.value, this.password.value);
+  }
+
+  signin() {
+    return this.auth.emailSignIn(this.email.value, this.password.value);
+  }
+
+  googleSignIn() {
+    return this.auth.googleSignIn();
+  }
+
+  githubSignIn() {
+    return this.auth.githubSignIn();
+  }
+
+  facebookSignIn() {
+    return this.auth.facebookSignIn();
+  }
+
+  twitterSignIn() {
+    return this.auth.twitterSignIn();
   }
 
   setDisplayName(user) {

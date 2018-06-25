@@ -1,0 +1,26 @@
+<ng-container *ngIf="(auth.user | async) || {} as user">
+    <form [formGroup]="signupForm" *ngIf="!user.uid" (ngSubmit)="signup()">
+        <mat-form-field>
+            <input matInput formControlName="email" type="email" placeholder="Email">
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field>
+            <input matInput formControlName="password" placeholder="Enter your password" [type]="passwordHidden ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="passwordHidden = !passwordHidden">{{passwordHidden ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="email.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" [disabled]="!signupForm.valid" color="primary">Sign Up</button>
+    </form>
+
+    <form [formGroup]="detailForm" *ngIf="user.uid && !user.displayName" (ngSubmit)="setDisplayName(user)">
+        <mat-form-field>
+            <input matInput formControlName="displayName" type="text" placeholder="Display name">
+            <mat-error *ngIf="displayName.invalid">You must enter a value</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" [disabled]="!detailForm.valid" color="primary">Update display name</button>
+    </form>
+</ng-container>

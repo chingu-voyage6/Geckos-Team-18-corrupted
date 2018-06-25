@@ -81,6 +81,11 @@ export class AuthService {
       });
   }
 
+  signOut() {
+    this.afAuth.auth.signOut();
+    this.user = of(null);
+  }
+
   //TODO check constructor if it can be merged
   getUser(user) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(

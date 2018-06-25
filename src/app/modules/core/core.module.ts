@@ -9,10 +9,11 @@ import { TestComponent } from './components/test/test.component';
 import { CoreComponent } from './components/core/core.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LogoComponent } from './components/logo/logo.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, MaterialModule, HttpClientModule],
-  declarations: [CoreComponent, TestComponent, ToolbarComponent, LogoComponent],
+  declarations: [CoreComponent, TestComponent, ToolbarComponent, LogoComponent, LandingComponent],
   exports: [CoreComponent, TestComponent, ToolbarComponent]
 })
 export class CoreModule {}

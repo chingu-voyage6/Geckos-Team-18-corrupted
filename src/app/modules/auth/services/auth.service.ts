@@ -45,12 +45,27 @@ export class AuthService {
       role: 'User'
     };
 
+    if (auth.additionalUserInfo.providerId != 'password') {
+      data.displayName = auth.user.displayName;
+    }
+
     return userRef.set(data);
   }
 
-  googleLogin() {
+  googleSignIn() {
     return this.afAuth.auth
       .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(user => {
+        return this.setUserDoc(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  githubSignIn() {
+    return this.afAuth.auth
+      .signInWithPopup(new firebase.auth.GithubAuthProvider())
       .then(user => {
         return this.setUserDoc(user);
       })

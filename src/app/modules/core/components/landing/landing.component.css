@@ -1,0 +1,27 @@
+/****WIP**********/
+
+
+* {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h4 {
+    font-weight: 300;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+}
+
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+}
+.wrapper {
+    padding: 3%;
+}
+
+.footer {
+    background-color: #345c7c;
+    color: #fff;
+}

@@ -34,23 +34,8 @@ export class AuthService {
     );
   }
 
-  private setUserDoc(auth) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
-      `users/${auth.user.uid}`
-    );
-
-    const data: User = {
-      uid: auth.user.uid,
-      displayName: '',
-      role: 'User'
-    };
-
-    return userRef.set(data);
-  }
-
-  googleLogin() {
-    return this.afAuth.auth
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+  anonymousSignIn() {
+    return this.afAuth.auth.signInAnonymously()
       .then(user => {
         return this.setUserDoc(user);
       })
@@ -71,14 +56,100 @@ export class AuthService {
   }
 
   emailSignIn(email: string, password: string) {
-    return this.afAuth.auth
+    this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
+      .then(user => {
+        this.getUser(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  facebookSignIn() {
+    return this.afAuth.auth
+      .signInWithPopup(new firebase.auth.FacebookAuthProvider())
       .then(user => {
         return this.setUserDoc(user);
       })
       .catch(error => {
         console.log(error);
       });
+  }
+
+  googleSignIn() {
+    return this.afAuth.auth
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(user => {
+        return this.setUserDoc(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  githubSignIn() {
+    return this.afAuth.auth
+      .signInWithPopup(new firebase.auth.GithubAuthProvider())
+      .then(user => {
+        return this.setUserDoc(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  twitterSignIn() {
+    return this.afAuth.auth
+      .signInWithPopup(new firebase.auth.TwitterAuthProvider())
+      .then(user => {
+        return this.setUserDoc(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut();
+    this.user = of(null);
+  }
+
+  private setUserDoc(auth) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+      `users/${auth.user.uid}`
+    );
+
+    const data: User = {
+      uid: auth.user.uid,
+      displayName: '',
+      role: 'User'
+    };
+
+    switch (auth.additionalUserInfo.providerId) {
+      case 'github.com': {
+        data.displayName = auth.additionalUserInfo.username;
+        break;
+      }
+
+      case 'twitter.com':
+      case 'facebook.com':
+      case 'google.com': {
+        data.displayName = auth.user.displayName;
+        break;
+      }
+    }
+
+    return userRef.set(data);
+  }
+
+  //TODO check constructor if it can be merged
+  private getUser(user) {
+    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
+      `users/${user.uid}`
+    );
+
+    this.user = userRef.valueChanges();
   }
 
   updateUser(user: User, data: any) {

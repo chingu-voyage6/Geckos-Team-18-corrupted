@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -73,6 +74,7 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    FlexLayoutModule,
     MatTreeModule
   ],
   exports: [

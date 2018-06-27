@@ -1,5 +1,4 @@
-/****WIP**********/
-
+\********WIP**********/
 
 * {
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -9,19 +8,36 @@ h4 {
     font-weight: 300;
 }
 
+.header{
+    background-image: url('../../../../../assets/img/background-card-close-up-1111317.jpg')
+}
+
 .material-icons {
     font-family: 'Material Icons';
 }
 
-
 .mat-card:not([class*=mat-elevation-z]) {
     box-shadow: none;
 }
+.mat-figure * {
+    display:block;
+}
+
+#parent {
+    overflow: hidden;
+}
+
+.footer-list {
+    display: block;
+}
+
 .wrapper {
     padding: 3%;
 }
 
-.footer {
+.footer{
     background-color: #345c7c;
     color: #fff;
+    font-size: .9em;
+    
 }

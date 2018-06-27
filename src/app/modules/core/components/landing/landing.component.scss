@@ -1,0 +1,68 @@
+@import "~@angular/material/theming";
+@import "../../../../../main-theme.scss";
+
+* {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+#h1_title{
+    color:#fff;
+    letter-spacing: .4em;
+}
+h4, h1 {
+    font-weight: 300;
+}
+
+.header {
+    background-image: url("../../../../../assets/img/background-card-close-up-1111317.jpg");
+}
+
+.header,.img1, .img2, .img3, .img4 {
+    background-position: center;
+    background-size: cover;
+}
+
+.img1 {
+    background-image: url("../../../../../assets/img/art-fan-object-606676.jpg");
+}
+
+.img2 {
+    background-image: url("../../../../../assets/img/black-and-white-blur-book-76752.jpg");
+}
+
+.img3 {
+    background-image: url("../../../../../assets/img/abstract-art-banner-1001990.jpg");
+}
+
+.img4 {
+    background-image: url("../../../../../assets/img/alphabet-blur-books-301920.jpg");
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: none;
+}
+
+#parent {
+    overflow: hidden;
+}
+
+//urgh. wip
+.footer-list, .mat-figure * {
+    display: block;
+}
+
+
+
+.footer {
+    background-color: mat-color($main-theme-primary);
+    color: #fff;
+    font-size: .9em;
+
+    & * {
+        display: block;
+    }
+}

@@ -35,7 +35,8 @@ export class AuthService {
   }
 
   anonymousSignIn() {
-    return this.afAuth.auth.signInAnonymously()
+    return this.afAuth.auth
+      .signInAnonymously()
       .then(user => {
         return this.setUserDoc(user);
       })
@@ -145,11 +146,15 @@ export class AuthService {
 
   //TODO check constructor if it can be merged
   private getUser(user) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(
-      `users/${user.uid}`
+    this.user = this.afAuth.authState.pipe(
+      switchMap(user => {
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
     );
-
-    this.user = userRef.valueChanges();
   }
 
   updateUser(user: User, data: any) {

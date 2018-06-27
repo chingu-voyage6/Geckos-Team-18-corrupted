@@ -1,5 +1,5 @@
 <ng-container *ngIf="(auth.user | async) || {} as user">
-    <form [formGroup]="signupForm" *ngIf="!user.uid" (ngSubmit)="signup()">
+    <form [formGroup]="signupForm" *ngIf="!user.uid" (ngSubmit)="loginGoogle()">
         <mat-form-field>
             <input matInput formControlName="email" type="email" placeholder="Email">
             <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
@@ -24,3 +24,8 @@
         <button mat-raised-button type="submit" [disabled]="!detailForm.valid" color="primary">Update display name</button>
     </form>
 </ng-container>
+<button mat-raised-button color="primary" (click)="googleSignIn()">Google</button>
+<button mat-raised-button color="primary" (click)="githubSignIn()">Github</button>
+<button mat-raised-button color="primary" (click)="facebookSignIn()">Facebook</button>
+<button mat-raised-button color="primary" (click)="twitterSignIn()">Twitter</button>
+<button mat-raised-button color="primary" (click)="anonymousSignIn()">Anonymous</button>

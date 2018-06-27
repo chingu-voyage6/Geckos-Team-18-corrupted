@@ -1,7 +1,8 @@
 <div class="wrapper">
+
   <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile rowspan="1" colspan="2">
-      <mat-card-title>
+      <mat-card-title class="header">
         <h1>Header</h1>
       </mat-card-title>
     </mat-grid-tile>
@@ -17,8 +18,12 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile color="accent">image</mat-grid-tile>
-    <mat-grid-tile>image</mat-grid-tile>
+    <mat-grid-tile class="img">
+      <img src="../../../../../assets/img/art-fan-object-606676.jpg">
+    </mat-grid-tile>
+    <mat-grid-tile class="img">
+      <img src="../../../../../assets/img/background-card-close-up-1111317.jpg">
+    </mat-grid-tile>
     <mat-grid-tile>
       <mat-card>
         <mat-card-header>
@@ -45,29 +50,33 @@
       </mat-card>
 
     </mat-grid-tile>
-    <mat-grid-tile>image</mat-grid-tile>
-    <mat-grid-tile>image</mat-grid-tile>
-
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h1>Growing and international</h1>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          Our community is growing rapidly, we have followers all over the world. Try it xD
-        </mat-card-content>
-      </mat-card>
-
+    <mat-grid-tile class="img">
+      <img src="../../../../../assets/img/abstract-art-banner-1001990.jpg">
     </mat-grid-tile>
+    <mat-grid-tile class="img">
+      <img src="../../../../../assets/img/alphabet-blur-books-301920.jpg">
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h1>Growing and international</h1>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            Our community is growing rapidly, we have followers all over the world. Try it xD
+          </mat-card-content>
+        </mat-card>
+
+      </mat-grid-tile>
 
   </mat-grid-list>
 
 
 </div>
-<mat-grid-list cols="4" rowHeight="5:3" class="footer">
-  <mat-grid-tile>
+<mat-grid-list cols="4" rowHeight="5:3" class="footer" id="parent">
+  <mat-grid-tile class="footer_list">
 
     <mat-icon>assignment_turned_in</mat-icon>
     <h4>Products</h4>
@@ -78,7 +87,7 @@
     </ul>
 
   </mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile class="footer_list">
     <mat-icon>help</mat-icon>
     <h4>FAQ</h4>
     <ul>
@@ -88,7 +97,7 @@
     </ul>
 
   </mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile class="footer_list">
     <mat-icon>feedback</mat-icon>
     <h4>Social</h4>
     <ul>
@@ -99,7 +108,8 @@
     </ul>
 
   </mat-grid-tile>
-  <mat-grid-tile>
+  <mat-grid-tile class="footer_list">
+
     <mat-icon>loyalty</mat-icon>
     <h4>About the company</h4>
     <ul>

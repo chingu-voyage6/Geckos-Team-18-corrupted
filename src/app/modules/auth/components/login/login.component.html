@@ -1,0 +1,26 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex> 
+    <form class="form-field" [formGroup]="registerForm" (ngSubmit)="loginGoogle()" fxLayout="column" fxLayoutAlign="center center">
+        <mat-form-field>
+            <input matInput formControlName="email" type="email" placeholder="Enter your Email">
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="password" placeholder="Enter your password" [type]="passwordHidden ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="passwordHidden = !passwordHidden">{{passwordHidden ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="email.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center" >
+            <button mat-raised-button color="warn" (click)="emailSignIn()">Login</button>
+        </div>
+        <button mat-raised-button color="warn" (click)="signOut()">Logout</button>
+    </form>
+    <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center" >
+        <button fxFlex="45" mat-raised-button color="accent" (click)="googleSignIn()">Login with Google</button>
+        <button fxFlex="45" mat-raised-button color="primary" (click)="githubSignIn()">Login with Github</button>
+    </div>
+    <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center">
+        <button fxFlex="45" mat-raised-button color="primary" (click)="facebookSignIn()">Login with Facebook</button>
+        <button fxFlex="45" mat-raised-button color="accent" (click)="twitterSignIn()">Login with Twitter</button>
+    </div>
+        <button mat-raised-button color="warn" (click)="anonymousSignIn()">Remain anonymous</button> 
+</div>

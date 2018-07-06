@@ -16,7 +16,7 @@ import { LayoutTestComponent } from './components/layout-test/layout-test.compon
     CoreComponent,
     ToolbarComponent,
     LogoComponent,
-    LayoutTestComponent
+    LayoutTestComponent,
   ],
   exports: [CoreComponent, ToolbarComponent, LogoComponent, LayoutTestComponent]
 })

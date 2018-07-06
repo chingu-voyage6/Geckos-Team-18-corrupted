@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service'
+import { AuthService } from '../../services/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,17 +9,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
   loginForm: FormGroup;
   passwordHidden: boolean = true;
 
   constructor(
-  	private auth: AuthService,
+    private auth: AuthService,
     private router: Router,
     private fb: FormBuilder
-    ) { 
-  	
-  }
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -34,7 +31,7 @@ export class LoginComponent implements OnInit {
         ]
       ]
     });
-}
+  }
 
   get email() {
     return this.loginForm.get('email');
@@ -67,10 +64,6 @@ export class LoginComponent implements OnInit {
     return this.auth.twitterSignIn();
   }
 
-  signout() {
-    return this.auth.signOut();
-  }
-
   getEmailErrorMessage() {
     return this.email.hasError('required')
       ? 'You must enter a value'
@@ -87,5 +80,3 @@ export class LoginComponent implements OnInit {
         : '';
   }
 }
-
-

@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from 'angularfire2';
-
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 import { environment } from '../environments/environment';
 
-import { RoutingModule } from './routing/routing.module';
 import { CoreModule } from './modules/core/core.module';
 import { AuthModule } from './modules/auth/auth.module';
 
@@ -19,8 +18,10 @@ import { AppComponent } from './modules/core/components/app/app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    RoutingModule,
+    RouterModule,
     CoreModule,
     AuthModule
   ],

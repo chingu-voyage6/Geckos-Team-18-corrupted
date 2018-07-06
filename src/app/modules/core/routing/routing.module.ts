@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from '../../auth/guards/auth.guard';
 
-import { LayoutTestComponent } from '../components/layout-test/layout-test.component';
+import { LandingComponent } from '../components/landing/landing.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    component: LayoutTestComponent,
-    canActivate: [AuthGuard]
+    component: LandingComponent
   }
 ];
 

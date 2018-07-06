@@ -5,19 +5,33 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material/material.module';
 import { RoutingModule } from './routing/routing.module';
 
+
+import { TestComponent } from './components/test/test.component';
 import { CoreComponent } from './components/core/core.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LogoComponent } from './components/logo/logo.component';
-import { LayoutTestComponent } from './components/layout-test/layout-test.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
-  imports: [CommonModule, RoutingModule, MaterialModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MaterialModule,
+    HttpClientModule
+  ],
   declarations: [
     CoreComponent,
+    TestComponent,
     ToolbarComponent,
     LogoComponent,
-    LayoutTestComponent
+    LandingComponent
   ],
-  exports: [CoreComponent, ToolbarComponent, LogoComponent, LayoutTestComponent]
+  exports: [
+    CoreComponent,
+    TestComponent,
+    ToolbarComponent,
+    LogoComponent,
+    LandingComponent
+  ]
 })
 export class CoreModule {}

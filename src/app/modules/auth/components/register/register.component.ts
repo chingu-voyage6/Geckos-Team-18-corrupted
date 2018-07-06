@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service'
+import { Router, Params } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-test',
-  templateUrl: './test.component.html',
-  styleUrls: ['./test.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class TestComponent implements OnInit {
-  signupForm: FormGroup;
-  detailForm: FormGroup;
+export class RegisterComponent implements OnInit {
+
+  registerForm: FormGroup;
   passwordHidden: boolean = true;
 
-  constructor(private fb: FormBuilder, private auth: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService, 
+    private router: Router) 
+   { }
 
-  ngOnInit() {
-    this.signupForm = this.fb.group({
+   ngOnInit() {
+    this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: [
         '',
@@ -28,28 +32,17 @@ export class TestComponent implements OnInit {
         ]
       ]
     });
-
-    this.detailForm = this.fb.group({
-      displayName: ['', [Validators.required]]
-    });
   }
-
+ 
   get email() {
-    return this.signupForm.get('email');
+    return this.registerForm.get('email');
   }
   get password() {
-    return this.signupForm.get('password');
-  }
-  get displayName() {
-    return this.detailForm.get('displayName');
+    return this.registerForm.get('password');
   }
 
   signup() {
     return this.auth.emailSignUp(this.email.value, this.password.value);
-  }
-
-  signin() {
-    return this.auth.emailSignIn(this.email.value, this.password.value);
   }
 
   anonymousSignIn() {
@@ -70,10 +63,6 @@ export class TestComponent implements OnInit {
 
   twitterSignIn() {
     return this.auth.twitterSignIn();
-  }
-
-  setDisplayName(user) {
-    return this.auth.updateUser(user, { displayName: this.displayName.value });
   }
 
   getEmailErrorMessage() {

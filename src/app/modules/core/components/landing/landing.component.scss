@@ -1,68 +1,69 @@
-@import "~@angular/material/theming";
-@import "../../../../../main-theme.scss";
+@import '~@angular/material/theming';
+@import '../../../../../main-theme.scss';
 
 * {
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-#h1_title{
-    color:#fff;
-    letter-spacing: .4em;
+#h1_title {
+  color: #fff;
+  letter-spacing: 0.4em;
+  text-shadow: 2px 2px #9dc6fc;
 }
-h4, h1 {
-    font-weight: 300;
+
+h4,
+h1 {
+  font-weight: 300;
 }
 
 .header {
-    background-image: url("../../../../../assets/img/background-card-close-up-1111317.jpg");
+    background-color: mat-color($main-theme-warn);
+    
 }
 
-.header,.img1, .img2, .img3, .img4 {
-    background-position: center;
-    background-size: cover;
-}
-
-.img1 {
-    background-image: url("../../../../../assets/img/art-fan-object-606676.jpg");
-}
-
-.img2 {
-    background-image: url("../../../../../assets/img/black-and-white-blur-book-76752.jpg");
-}
-
-.img3 {
-    background-image: url("../../../../../assets/img/abstract-art-banner-1001990.jpg");
-}
-
-.img4 {
-    background-image: url("../../../../../assets/img/alphabet-blur-books-301920.jpg");
+.images img {
+  margin: 20px;
+  width: 70%;
 }
 
 .material-icons {
-    font-family: 'Material Icons';
+  font-family: 'Material Icons';
 }
 
-.mat-card:not([class*=mat-elevation-z]) {
-    box-shadow: none;
+.mat-card:not([class*='mat-elevation-z']) {
+  box-shadow: none;
 }
 
 #parent {
-    overflow: hidden;
+  overflow: hidden;
 }
-
-//urgh. wip
-.footer-list, .mat-figure * {
-    display: block;
-}
-
-
 
 .footer {
-    background-color: mat-color($main-theme-primary);
-    color: #fff;
-    font-size: .9em;
+  background-color: mat-color($main-theme-primary);
+  color: #fff;
+  font-size: 0.9em;
 
-    & * {
-        display: block;
-    }
+  & * {
+    display: block;
+    margin:1%;
+  }
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 959px) {
+  #h1_title {
+    letter-spacing: 0.2em;
+    font-size: 1.3em;
+  }
+  // footer{
+  //   flex: 1 1 auto; 
+  //   box-sizing: border-box;
+  // }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 5000px) {
+  * {
+    letter-spacing: 0.2em;
+  }
 }

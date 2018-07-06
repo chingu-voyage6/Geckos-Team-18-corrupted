@@ -53,6 +53,7 @@ import {
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
+
     MatIconModule,
     MatInputModule,
     MatListModule,
@@ -112,7 +113,8 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    FlexLayoutModule
   ]
 })
 export class MaterialModule {}

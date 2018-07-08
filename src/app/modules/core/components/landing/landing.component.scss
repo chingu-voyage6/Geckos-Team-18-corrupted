@@ -1,0 +1,69 @@
+@import '~@angular/material/theming';
+@import '../../../../../main-theme.scss';
+
+* {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+#h1_title {
+  color: #fff;
+  letter-spacing: 0.4em;
+  text-shadow: 2px 2px #9dc6fc;
+}
+
+h4,
+h1 {
+  font-weight: 300;
+}
+
+.header {
+    background-color: mat-color($main-theme-warn);
+    
+}
+
+.images img {
+  margin: 20px;
+  width: 70%;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+.mat-card:not([class*='mat-elevation-z']) {
+  box-shadow: none;
+}
+
+#parent {
+  overflow: hidden;
+}
+
+.footer {
+  background-color: mat-color($main-theme-primary);
+  color: #fff;
+  font-size: 0.9em;
+
+  & * {
+    display: block;
+    margin:1%;
+  }
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 959px) {
+  #h1_title {
+    letter-spacing: 0.2em;
+    font-size: 1.3em;
+  }
+  // footer{
+  //   flex: 1 1 auto; 
+  //   box-sizing: border-box;
+  // }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 5000px) {
+  * {
+    letter-spacing: 0.2em;
+  }
+}

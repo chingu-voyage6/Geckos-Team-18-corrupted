@@ -1,14 +1,16 @@
 @import '~@angular/material/theming';
 @import '../../../../../main-theme.scss';
-
+/* Typography */
 * {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  text-align: center;
 }
 
 #h1_title {
   color: #fff;
-  letter-spacing: 0.4em;
-  text-shadow: 2px 2px #9dc6fc;
+  font-weight: 200;
+  letter-spacing: 0.5em;
+  text-shadow: 2px 2px 3px #9dc6fc;
 }
 
 h4,
@@ -16,36 +18,61 @@ h1 {
   font-weight: 300;
 }
 
-.header {
-    background-color: mat-color($main-theme-warn);
-    
-}
-
-.images img {
-  margin: 20px;
-  width: 70%;
+span{
+  display:block;
 }
 
 .material-icons {
   font-family: 'Material Icons';
 }
 
-.mat-card:not([class*='mat-elevation-z']) {
-  box-shadow: none;
+/* End Typography */
+
+/*MAIN PAGE STYLING*/
+
+.header {
+  background-color: mat-color($main-theme-warn);
+}
+
+.images img {
+  margin: 10px;
 }
 
 #parent {
   overflow: hidden;
 }
 
-.footer {
-  background-color: mat-color($main-theme-primary);
-  color: #fff;
-  font-size: 0.9em;
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
 
-  & * {
-    display: block;
-    margin:1%;
+.wrapper {
+  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+#wrapper div {
+  padding: 20px;
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  max-width: 50%;
+}
+
+#footer {
+  background-color: mat-color($main-theme-primary);
+  font-size: 0.9em;
+  display: flex;
+  & .mat-card {
+    color: #fff;
+    background-color: mat-color($main-theme-primary);
+  }
+  & div .mat-card * {
+    
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1%;
   }
 }
 
@@ -56,14 +83,29 @@ h1 {
     letter-spacing: 0.2em;
     font-size: 1.3em;
   }
-  // footer{
-  //   flex: 1 1 auto; 
-  //   box-sizing: border-box;
-  // }
+
+  #people {
+    order: -1;
+  }
+  #toys {
+    order: 1;
+  }
+
+  #wrapper div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  #footer div .mat-card *{
+    font-size:1em;
+  }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 5000px) {
+@media screen and (min-width: 960px) and (max-width: 5000px) {
   * {
     letter-spacing: 0.2em;
+  }
+
+  .text {
+    margin-top:28%;
   }
 }

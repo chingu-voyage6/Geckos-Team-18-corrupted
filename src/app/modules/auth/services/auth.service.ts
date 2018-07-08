@@ -141,6 +141,8 @@ export class AuthService {
       }
     }
 
+    this.router.navigate(['home']);
+
     return userRef.set(data);
   }
 

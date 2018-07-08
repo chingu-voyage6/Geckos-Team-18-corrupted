@@ -6,121 +6,123 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<div fxLayout="column" class="zero">
+<div id="wrapper" class="wrapper" fxLayout="row">
+  <div fxflex>
 
-  <mat-grid-list #grid rowHeight="5:3" cols="2">
+    <h1 class="text">App features</h1>
 
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h1>App features</h1>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          Our application helps people to learn new things and create new world
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile class="images">
-      <img src="../../../../../assets/img/openmind.svg">
-    </mat-grid-tile>
-    <mat-grid-tile class="images">
-      <img src="../../../../../assets/img/isometricworkspace-01.svg">
-    </mat-grid-tile>
+    <p>Our application helps people to learn new things and create new worlds of knowledge... easy breezy.</p>
 
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h1>Fresh collections</h1>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          We've created several collections that will help you to start education and set your pace
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
+  </div>
+  <div fxflex id="people" class="images">
+    <img src="../../../../../assets/img/openmind.svg">
+  </div>
+  <div fxflex id="computer" class="images">
+    <img src="../../../../../assets/img/BlockNotes_02.svg">
+  </div>
+  <div fxflex>
+
+    <h1 class="text">Fresh collections</h1>
+
+    <p>We've created several collections that will help you to start education and set your pace</p>
+
+  </div>
+  <div fxflex>
+
+    <h1 class="text">Your own personal cards</h1>
 
 
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h1>Your own personal cards</h1>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          You can create your own cards and fill them with content you need for studying
-        </mat-card-content>
-      </mat-card>
+    <p>You can create your own cards and fill them with content you need for studying</p>
 
-    </mat-grid-tile>
-    <mat-grid-tile class="images">
-      <img src="../../../../../assets/img/ToysIconPack.svg">
-    </mat-grid-tile>
-    <mat-grid-tile class="images">
-      <img src="../../../../../assets/img/FreeAirshipVector.svg">
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h1>Growing and international</h1>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          Our community is growing rapidly, we have followers all over the world. Try it xD
-        </mat-card-content>
-      </mat-card>
+  </div>
+  <div fxflex id="toys" class="images">
+    <img src="../../../../../assets/img/ToysIconPack.svg">
+  </div>
+  <div fxflex class="images">
+    <img src="../../../../../assets/img/FreeAirshipVector.svg">
+  </div>
+  <div fxflex>
 
-    </mat-grid-tile>
+    <h1 class="text">Growing and international</h1>
 
-  </mat-grid-list>
+    <p>Our community is growing rapidly, we have followers all over the world. Try it!</p>
+
+  </div>
 
 
 </div>
 
 
-<footer class="footer" fxLayout="row" fxLayoutAlign="space-evenly center">
+<footer id="footer" fxLayout="row" fxLayoutAlign="space-evenly start">
 
-  <div>
-    <mat-icon>assignment_turned_in</mat-icon>
-    <h4>Products</h4>
-    <ul>
-      <li>Project 1</li>
-      <li>Project 2</li>
-      <li>Project 3</li>
-    </ul>
+  <div fxflex>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>assignment_turned_in</mat-icon>
+        <h4>Products</h4>
+      </mat-card-title>
+      <mat-card-content>
+
+        <span>Project 1</span>
+        <span>Project 2</span>
+        <span>Project 3</span>
+
+      </mat-card-content>
+    </mat-card>
+
+
   </div>
 
 
-  <div>
-    <mat-icon>help</mat-icon>
-    <h4>FAQ</h4>
-    <ul>
-      <li>Guide</li>
-      <li>FAQs</li>
+  <div fxflex>
 
-    </ul>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>help</mat-icon>
+        <h4>FAQ</h4>
+      </mat-card-title>
+      <mat-card-content>
+
+        <span>Guide</span>
+        <span>FAQs</span>
+
+
+      </mat-card-content>
+    </mat-card>
+
   </div>
-  <div>
-    <mat-icon>feedback</mat-icon>
-    <h4>Social</h4>
-    <ul>
-      <li>Twitter</li>
-      <li>Facebook</li>
-      <li>Google+</li>
-      <li>Github</li>
-    </ul>
+  <div fxflex>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>feedback</mat-icon>
+        <h4>Social</h4>
+      </mat-card-title>
+      <mat-card-content>
+
+        <span>Twitter</span>
+        <span>Facebook</span>
+        <span>Google+</span>
+        <span>Github</span>
+
+      </mat-card-content>
+    </mat-card>
+
+
   </div>
-  <div>
-    <mat-icon>loyalty</mat-icon>
-    <h4>About the company</h4>
-    <ul>
-      <li>Terms of service</li>
-      <li>Privacy policy</li>
-    </ul>
+  <div fxflex>
+    <mat-card>
+      <mat-card-title>
+        <mat-icon>loyalty</mat-icon>
+        <h4>About the company</h4>
+      </mat-card-title>
+      <mat-card-content>
+
+        <span>Terms of service</span>
+        <span>Privacy policy</span>
+
+      </mat-card-content>
+    </mat-card>
+
   </div>
 
 </footer>

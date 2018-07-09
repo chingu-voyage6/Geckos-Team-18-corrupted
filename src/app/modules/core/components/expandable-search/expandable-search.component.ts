@@ -17,7 +17,6 @@ import {
         'show',
         style({
           'margin-left': '0%',
-          'margin-right': '0px',
           width: '100%'
         })
       ),
@@ -25,7 +24,6 @@ import {
         'hide',
         style({
           'margin-left': '100%',
-          'margin-right': '24px',
           width: '0%'
         })
       ),

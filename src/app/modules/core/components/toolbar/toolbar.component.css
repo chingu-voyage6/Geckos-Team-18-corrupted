@@ -11,3 +11,7 @@ app-logo {
 .toolbar-spacer {
   flex: 1 1 auto;
 }
+
+app-expandable-search {
+  width: 60%;
+}

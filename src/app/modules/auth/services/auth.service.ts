@@ -61,6 +61,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(user => {
         this.getUser(user);
+        this.router.navigate(['home']);
       })
       .catch(error => {
         console.log(error);

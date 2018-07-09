@@ -1,5 +1,5 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxFlex> 
-    <form class="form-field" [formGroup]="registerForm" (ngSubmit)="loginGoogle()" fxLayout="column" fxLayoutAlign="center center">
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+    <form class="form-field" [formGroup]="registerForm" (ngSubmit)="signup()" fxLayout="column" fxLayoutAlign="center center">
         <mat-form-field>
             <input matInput formControlName="email" type="email" placeholder="Enter your Email">
             <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
@@ -9,13 +9,13 @@
             <mat-icon matSuffix (click)="passwordHidden = !passwordHidden">{{passwordHidden ? 'visibility' : 'visibility_off'}}</mat-icon>
             <mat-error *ngIf="email.invalid">{{getPasswordErrorMessage()}}</mat-error>
         </mat-form-field>
-        <button fxFlex="45" mat-raised-button color="warn" (click)="emailSignUp()">Register</button>
+        <button type="submit" fxFlex="45" mat-raised-button color="warn">Register</button>
     </form>
     <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center">
         <button fxFlex="45" mat-raised-button color="accent" (click)="googleSignIn()">Register with Google</button>
         <button fxFlex="45" mat-raised-button color="primary" (click)="githubSignIn()">Register with Github</button>
     </div>
-    <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center" >
+    <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center">
         <button fxFlex="45" mat-raised-button color="primary" (click)="facebookSignIn()">Register with Facebook</button>
         <button fxFlex="45" mat-raised-button color="accent" (click)="twitterSignIn()">Register with Twitter</button>
     </div>

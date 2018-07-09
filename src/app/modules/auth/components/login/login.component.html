@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <form class="form-field" [formGroup]="loginForm" (ngSubmit)="loginGoogle()" fxLayout="column" fxLayoutAlign="center center">
+    <form class="form-field" [formGroup]="loginForm" (ngSubmit)="signin()" fxLayout="column" fxLayoutAlign="center center">
         <mat-form-field>
             <input matInput formControlName="email" type="email" placeholder="Enter your Email">
             <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
@@ -10,7 +10,7 @@
             <mat-error *ngIf="email.invalid">{{getPasswordErrorMessage()}}</mat-error>
         </mat-form-field>
         <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center">
-            <button mat-raised-button color="warn" (click)="emailSignIn()">Login</button>
+            <button type="submit" mat-raised-button color="warn">Login</button>
         </div>
     </form>
     <div class="button-form" fxLayout="row" fxLayoutAlign="space-around center">

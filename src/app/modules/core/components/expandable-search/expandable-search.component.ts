@@ -49,6 +49,7 @@ export class ExpandableSearchComponent {
   offClickHandler(event: any) {
     if (!this.container.nativeElement.contains(event.target) && this.show) {
       this.show = false;
+      this.search.nativeElement.value = '';
     }
   }
 

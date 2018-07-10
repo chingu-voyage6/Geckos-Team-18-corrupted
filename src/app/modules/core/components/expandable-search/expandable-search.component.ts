@@ -27,12 +27,12 @@ import {
           width: '0%'
         })
       ),
-      transition('* => *', animate('300ms ease-out'))
+      transition('* => *', animate('800ms ease-out'))
     ])
   ]
 })
 export class ExpandableSearchComponent {
-  show: boolean = false;
+  show = false;
   @ViewChild('container') container;
   @ViewChild('search') search: ElementRef;
 

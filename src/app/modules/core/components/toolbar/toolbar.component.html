@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
+<mat-toolbar color="primary" class="mat-elevation-z6" *ngIf="(this.layoutService.layoutState | async)?.toolbar">
   <app-logo></app-logo>
   <span class="toolbar-spacer"></span>
   <app-expandable-search></app-expandable-search>

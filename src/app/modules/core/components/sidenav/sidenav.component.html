@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-  <mat-sidenav class="mat-elevation-z6" mode="side" opened>Sidenav content</mat-sidenav>
+  <mat-sidenav class="mat-elevation-z6" mode="side" [opened]="(this.layoutService.layoutState | async)?.sidenav">Sidenav content</mat-sidenav>
   <mat-sidenav-content>
     <ng-content></ng-content>
   </mat-sidenav-content>

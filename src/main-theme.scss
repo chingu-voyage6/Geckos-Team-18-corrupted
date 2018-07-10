@@ -12,4 +12,6 @@ $main-theme: mat-light-theme(
 );
 
 @include angular-material-theme($main-theme);
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+$special-font: 'Pacifico';
 

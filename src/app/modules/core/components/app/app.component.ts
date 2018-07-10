@@ -11,6 +11,6 @@ export class AppComponent implements OnInit {
   constructor(public layoutService: LayoutService) {}
 
   ngOnInit() {
-    console.log(this.layoutService.success());
+  
   }
 }

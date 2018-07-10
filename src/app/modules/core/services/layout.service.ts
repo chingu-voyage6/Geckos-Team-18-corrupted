@@ -21,13 +21,13 @@ export class LayoutService {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         switch (event.url) {
-          case '/home': {
+          /*case '/home': {
             this.layoutState.next({
               toolbar: false,
               sidenav: false
             });
             break;
-          }
+          }*/
           default: {
             this.layoutState.next(initialState);
             break;

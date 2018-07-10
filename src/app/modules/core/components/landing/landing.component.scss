@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
 @import '../../../../../main-theme.scss';
 /* Typography */
+
 * {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   text-align: center;
@@ -8,18 +9,20 @@
 
 #h1_title {
   color: #fff;
-  font-weight: 200;
+  font-size: 3em;
   letter-spacing: 0.5em;
-  text-shadow: 2px 2px 3px #9dc6fc;
+  text-shadow: 2px 2px 15px mat-color($main-theme-primary);
 }
 
 h4,
-h1 {
+h1,
+h2 {
   font-weight: 300;
+  font-family: $special-font;
 }
 
-span{
-  display:block;
+span {
+  display: block;
 }
 
 .material-icons {
@@ -30,9 +33,9 @@ span{
 
 /*MAIN PAGE STYLING*/
 
-.header {
-  background-color: mat-color($main-theme-warn);
-}
+// .header{
+//   background-color: mat-color($main-theme-accent);
+// }
 
 .images img {
   margin: 10px;
@@ -42,7 +45,7 @@ span{
   overflow: hidden;
 }
 
-.mat-card:not([class*=mat-elevation-z]) {
+.mat-card:not([class*='mat-elevation-z']) {
   box-shadow: none;
 }
 
@@ -68,7 +71,6 @@ span{
     background-color: mat-color($main-theme-primary);
   }
   & div .mat-card * {
-    
     box-sizing: border-box;
     flex: 1 1 100%;
     max-width: 100%;
@@ -95,17 +97,20 @@ span{
     flex: 1 1 100%;
     max-width: 100%;
   }
-  #footer div .mat-card *{
-    font-size:1em;
+  #footer div .mat-card * {
+    font-size: 1em;
   }
 }
 
 @media screen and (min-width: 960px) and (max-width: 5000px) {
-  * {
+  p,
+  span {
     letter-spacing: 0.2em;
   }
-
+  h2 {
+    font-size: 2em;
+  }
   .text {
-    margin-top:28%;
+    margin-top: 28%;
   }
 }

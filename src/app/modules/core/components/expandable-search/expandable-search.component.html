@@ -1,0 +1,10 @@
+<div #container fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex>
+    <mat-form-field [@expand]="state" name="search" floatLabel="never">
+      <input matInput #search placeholder="Search" type="text">
+    </mat-form-field>
+  </div>
+  <button mat-icon-button (click)="toggle()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>

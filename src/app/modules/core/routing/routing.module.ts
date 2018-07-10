@@ -10,6 +10,10 @@ export const routes: Routes = [
   {
     path: 'home',
     component: LandingComponent
+  },
+  {
+    path: 'collections',
+    loadChildren: '../../collection/collection.module#CollectionModule'
   }
 ];
 

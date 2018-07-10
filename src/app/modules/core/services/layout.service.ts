@@ -1,34 +1,39 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Router, Event, NavigationStart } from '@angular/router';
 
+export interface LayoutState {
+  toolbar: boolean;
+  sidenav: boolean;
+}
+
+export const initialState: LayoutState = {
+  toolbar: true,
+  sidenav: false
+};
 @Injectable({
   providedIn: 'root'
 })
 export class LayoutService {
+  layoutState = new BehaviorSubject<LayoutState>(initialState);
 
-  visible: boolean;
-
-  constructor() {
-    this.visible = false;
-  }
-
-  hide() {
-    this.visible = false;
-  }
-
-  show() {
-    this.visible = true;
-  }
-
-  toggle() {
-    this.visible = !this.visible;
-  }
-
-  success() {
-    return 'Service works!';
+  constructor(private router: Router) {
+    router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        switch (event.url) {
+          case '/home': {
+            this.layoutState.next({
+              toolbar: false,
+              sidenav: false
+            });
+            break;
+          }
+          default: {
+            this.layoutState.next(initialState);
+            break;
+          }
+        }
+      }
+    });
   }
 }
-
-// test boolean values of the element on which the service has an effect
-// i.e. button toggling true/false
-
-// observable

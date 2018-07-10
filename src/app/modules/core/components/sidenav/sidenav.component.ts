@@ -8,11 +8,7 @@ import { LayoutService } from '../../services/layout.service';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
+  constructor(public layoutService: LayoutService) {}
 
-  constructor( public nav: LayoutService ) {}
-
-  ngOnInit() {
-    this.nav.show();
-  }
-
+  ngOnInit() {}
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '../material/material.module';
 import { RoutingModule } from './routing/routing.module';
 
@@ -14,12 +13,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ExpandableSearchComponent } from './components/expandable-search/expandable-search.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    RoutingModule
-  ],
+  imports: [CommonModule, MaterialModule, RoutingModule],
   declarations: [
     ToolbarComponent,
     LogoComponent,

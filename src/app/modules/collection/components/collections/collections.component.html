@@ -1,3 +1,21 @@
-<p>
-  collections works!
-</p>
+
+ <form class="form-field" [formGroup]="createForm" (ngSubmit)="create()" fxLayout="column" fxLayoutAlign="center center">
+    <mat-form-field>
+        <input matInput formControlName="name" type="text" placeholder="Enter collection name">
+    </mat-form-field>
+    <button mat-raised-button type="submit">Add</button>
+</form>
+
+<h3>Collections</h3>
+<mat-card *ngFor="let collection of collections | async">
+  <mat-card-content>
+      {{collection | json}}
+  </mat-card-content>
+</mat-card>
+
+<h3>User Collections</h3>
+<mat-card *ngFor="let userCollection of userCollections | async">
+  <mat-card-content>
+      {{userCollection | json}}
+  </mat-card-content>
+</mat-card>

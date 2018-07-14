@@ -142,7 +142,7 @@ export class AuthService {
       }
     }
 
-    this.router.navigate(['home']);
+    this.router.navigate(['collections']);
 
     return userRef.set(data);
   }

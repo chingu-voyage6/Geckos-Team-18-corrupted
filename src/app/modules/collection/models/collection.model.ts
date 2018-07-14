@@ -1,4 +1,4 @@
 export interface Collection {
-  author: string;
+  author?: string;
   name: string;
 }

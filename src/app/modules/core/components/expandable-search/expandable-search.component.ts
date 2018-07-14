@@ -27,7 +27,7 @@ import {
           width: '0%'
         })
       ),
-      transition('* => *', animate('800ms ease-out'))
+      transition('* => *', animate('300ms cubic-bezier(0.0, 0.0, 0.2, 1)'))
     ])
   ]
 })

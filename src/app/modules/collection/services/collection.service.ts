@@ -1,44 +1,57 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument
+} from 'angularfire2/firestore';
 import { Collection } from '../models/collection.model';
 import { Observable } from 'rxjs';
 import { AuthService } from '../../auth/services/auth.service';
-import { UserCollection } from '../models/user-collection.model';
 import { User } from '../../auth/models/user.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollectionService {
-  collectionRef: AngularFirestoreCollection<Collection>;
-  userCollectionRef: AngularFirestoreCollection<string>;
-
-
-  constructor(private afs: AngularFirestore, private authService: AuthService) { 
-    this.collectionRef = this.afs.collection('collections');
-    this.authService.user.subscribe((user: User) => {
-      this.userCollectionRef = this.afs.collection(`users/${user.uid}/collections`)
-    });
-  }
+  constructor(
+    private afs: AngularFirestore,
+    private authService: AuthService
+  ) {}
 
   get collections(): Observable<Collection[]> {
-    return this.collectionRef.valueChanges()
+    return this.afs
+      .collection<Collection>('collections', ref =>
+        ref.where('public', '==', true)
+      )
+      .valueChanges();
+  }
+
+  get userCollections(): Observable<Collection[]> {
+    return this.afs
+      .collection<Collection>('collections', ref => {
+        return ref.where('authorId', '==', this.authService.uid);
+      })
+      .valueChanges();
   }
 
   createCollection(collection: Collection) {
-    this.collectionRef.add(collection).then((collection) => {
-      console.log(collection.id);
-      this.addUserCollection(collection.id);
-    });
-
+    collection.authorId = this.authService.uid;
+    this.afs
+      .collection<Collection>('collections')
+      .add(collection)
+      .then(collection => {
+        this.afs
+          .doc(`collections/${collection.id}`)
+          .update({ id: collection.id });
+      });
   }
 
-  get userCollections(): Observable<string[]> {
-    return this.userCollectionRef.valueChanges();
+  updateCollection(collection: Collection) {
+    return this.afs.doc(`collections/${collection.id}`).update(collection);
   }
 
-  private addUserCollection(collectionId: string) {
-    this.userCollectionRef.add(collectionId);
+  deleteCollection(collectionId: string) {
+    this.afs.doc(`collections/${collectionId}`).delete();
   }
 }
- 

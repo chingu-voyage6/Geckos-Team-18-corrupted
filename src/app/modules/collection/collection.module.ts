@@ -6,12 +6,13 @@ import { CollectionService } from './services/collection.service';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { CollectionDetailComponent } from './components/collection-detail/collection-detail.component';
 
 @NgModule({
   imports: [CommonModule, RoutingModule, MaterialModule, ReactiveFormsModule],
-  declarations: [CollectionsComponent],
-  exports: [CollectionsComponent],
+  declarations: [CollectionsComponent, CollectionDetailComponent],
+  exports: [CollectionsComponent, CollectionDetailComponent],
+  entryComponents: [CollectionDetailComponent],
   providers: [AngularFirestore, CollectionService]
 })
 export class CollectionModule {}

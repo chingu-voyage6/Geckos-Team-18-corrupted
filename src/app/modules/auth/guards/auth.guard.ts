@@ -34,4 +34,11 @@ export class AuthGuard implements CanActivate {
       })
     );
   }
+
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<any> | Promise<any> | any {
+    return this.auth.user.pipe(take(1));
+  }
 }

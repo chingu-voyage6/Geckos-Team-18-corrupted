@@ -13,7 +13,10 @@ export const routes: Routes = [
   },
   {
     path: 'collections',
-    loadChildren: '../../collection/collection.module#CollectionModule'
+    loadChildren: '../../collection/collection.module#CollectionModule',
+    resolve: {
+      user: AuthGuard
+    }
   }
 ];
 

@@ -22,6 +22,12 @@ import { ExpandableSearchComponent } from './components/expandable-search/expand
     ExpandableSearchComponent
   ],
   providers: [LayoutService],
-  exports: [ToolbarComponent, LogoComponent, LandingComponent, SidenavComponent]
+  exports: [
+    ToolbarComponent,
+    LogoComponent,
+    LandingComponent,
+    SidenavComponent,
+    ExpandableSearchComponent
+  ]
 })
 export class CoreModule {}

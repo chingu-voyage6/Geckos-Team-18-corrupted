@@ -129,7 +129,7 @@ export class AuthService {
     const data: User = {
       uid: auth.user.uid,
       displayName: '',
-      role: 'User'
+      role: { editor: true }
     };
 
     switch (auth.additionalUserInfo.providerId) {

@@ -1,3 +1,27 @@
-<p>
-  collections works!
-</p>
+<form class="form-field" [formGroup]="createForm" (ngSubmit)="create()" fxLayout="column" fxLayoutAlign="center center">
+  <mat-form-field>
+    <input matInput formControlName="name" type="text" placeholder="Enter collection name">
+  </mat-form-field>
+  <mat-checkbox formControlName="public">Public?</mat-checkbox>
+  <button mat-raised-button type="submit">Add</button>
+</form>
+
+<h3>Collections</h3>
+<mat-card *ngFor="let collection of collections | async">
+  <mat-card-content>
+    {{collection | json}}
+  </mat-card-content>
+</mat-card>
+
+<h3>User Collections</h3>
+<mat-card *ngFor="let collection of userCollections | async">
+  <mat-card-content>
+    {{collection | json}}
+  </mat-card-content>
+  <button mat-icon-button (click)="collectionDetail(collection)">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="collectionService.deleteCollection(collection.id)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>

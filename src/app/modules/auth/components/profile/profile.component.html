@@ -1,0 +1,10 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex>
+  	<div *ngIf="(user | async )?.uid;else spinner"> 
+	  	<p>Hello, {{ (  user | async )?.displayName }}</p>
+	    <p>{{ (  user | async )?.role }}</p>
+	    <button mat-raised-button color="warn" (click)="signOut()">Logout</button>
+	</div>
+	<ng-template #spinner>
+		<mat-spinner diameter="40"></mat-spinner>
+	</ng-template>
+</div>

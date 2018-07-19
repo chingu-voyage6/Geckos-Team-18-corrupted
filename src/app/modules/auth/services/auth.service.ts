@@ -145,7 +145,7 @@ export class AuthService {
   }
 
   //TODO check constructor if it can be merged
-  private getUser(user) {
+  public getUser(user) {
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {

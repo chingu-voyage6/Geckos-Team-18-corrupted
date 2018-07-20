@@ -7,7 +7,7 @@ import {
 } from 'angularfire2/firestore';
 
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
@@ -32,6 +32,10 @@ export class AuthService {
         }
       })
     );
+  }
+
+  get uid(): string {
+    return this.afAuth.auth.currentUser.uid;
   }
 
   anonymousSignIn() {
@@ -125,7 +129,7 @@ export class AuthService {
     const data: User = {
       uid: auth.user.uid,
       displayName: '',
-      role: 'User'
+      role: { editor: true }
     };
 
     switch (auth.additionalUserInfo.providerId) {
@@ -142,7 +146,7 @@ export class AuthService {
       }
     }
 
-    this.router.navigate(['home']);
+    this.router.navigate(['collections']);
 
     return userRef.set(data);
   }

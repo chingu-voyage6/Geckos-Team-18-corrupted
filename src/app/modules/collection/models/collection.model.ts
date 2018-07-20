@@ -1,4 +1,9 @@
+import { Card } from './card.model';
+
 export interface Collection {
-  author: string;
+  id?: string;
+  authorId?: string;
   name: string;
+  public: boolean;
+  cards?: Card[];
 }

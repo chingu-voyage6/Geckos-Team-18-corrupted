@@ -50,7 +50,7 @@ export class CollectionService {
 
   getCollectionCards(collectionId: string) {
     return this.afs
-      .collection(`collections/${collectionId}/cards`)
+      .collection<Card>(`collections/${collectionId}/cards`)
       .valueChanges();
   }
 

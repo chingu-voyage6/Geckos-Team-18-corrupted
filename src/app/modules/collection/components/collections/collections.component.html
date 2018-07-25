@@ -18,9 +18,9 @@
   <mat-card-content>
     {{collection | json}}
   </mat-card-content>
-  <button mat-icon-button (click)="collectionDetail(collection)">
+  <a mat-icon-button routerLink="{{collection.id}}">
     <mat-icon>edit</mat-icon>
-  </button>
+  </a>
   <button mat-icon-button (click)="collectionService.deleteCollection(collection.id)">
     <mat-icon>delete</mat-icon>
   </button>

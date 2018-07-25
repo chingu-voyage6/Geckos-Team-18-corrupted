@@ -1,0 +1,16 @@
+.create-btn {
+	position: absolute;
+	bottom: 5vh;
+	right: 5vh;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	background: red;
+}
+
+.plus-icon {
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}

@@ -31,7 +31,7 @@ export class CollectionService {
 
   createCollection(collection: Collection) {
     collection.authorId = this.authService.uid;
-    this.afs
+    return this.afs
       .collection<Collection>('collections')
       .add(collection)
       .then(collection => {

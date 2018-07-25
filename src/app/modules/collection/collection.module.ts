@@ -11,12 +11,14 @@ import { CollectionService } from './services/collection.service';
 
 import { CollectionsComponent } from './components/collections/collections.component';
 import { CollectionDetailComponent } from './components/collection-detail/collection-detail.component';
+import { SingularCollectionComponent } from './components/singular-collection/singular-collection.component';
+import { CreateCollectionComponent } from './components/create-collection/create-collection.component';
 
 @NgModule({
   imports: [CommonModule, RoutingModule, MaterialModule, ReactiveFormsModule],
-  declarations: [CollectionsComponent, CollectionDetailComponent],
-  exports: [CollectionsComponent, CollectionDetailComponent],
-  entryComponents: [CollectionDetailComponent],
+  declarations: [CollectionsComponent, CollectionDetailComponent, SingularCollectionComponent, CreateCollectionComponent],
+  exports: [CollectionsComponent, CollectionDetailComponent, CreateCollectionComponent],
+  entryComponents: [CollectionDetailComponent, CreateCollectionComponent],
   providers: [AngularFirestore, CollectionService]
 })
 export class CollectionModule {}

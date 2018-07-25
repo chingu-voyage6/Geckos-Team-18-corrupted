@@ -1,0 +1,16 @@
+<mat-card *ngFor="let collection of userCollections | async" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card-content fxLayout="row" fxLayoutAlign="space-between center">
+    <p>Name {{ (  collections | async )?.name }}</p>
+    <p>Author {{ (  collections | async )?.authorId }}</p>
+    <p>Privacy {{ (  collections | async )?.public }}</p>
+  </mat-card-content>
+  <button mat-icon-button (click)="collectionDetail(collection)">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="collectionService.deleteCollection(collection.id)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
+<button class="create-btn" color="primary" mat-icon-button (click)="createCollection(collection)">
+    <mat-icon class="plus-icon">+</mat-icon>
+</button>

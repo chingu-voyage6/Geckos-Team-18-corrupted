@@ -4,35 +4,34 @@ import { Observable } from 'rxjs';
 import { Collection } from '../../models/collection.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { CollectionDetailComponent } from '../collection-detail/collection-detail.component';
 import { CreateCollectionComponent } from '../create-collection/create-collection.component';
+import { CollectionDetailComponent } from '../collection-detail/collection-detail.component';
 import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
-  selector: 'app-collections',
-  templateUrl: './collections.component.html',
-  styleUrls: ['./collections.component.css']
+  selector: 'app-singular-collection',
+  templateUrl: './singular-collection.component.html',
+  styleUrls: ['./singular-collection.component.css']
 })
-export class CollectionsComponent implements OnInit {
+export class SingularCollectionComponent implements OnInit {
   collections: Observable<Collection[]>;
   userCollections: Observable<Collection[]>;
   createForm: FormGroup;
 
   constructor(
-    private collectionService: CollectionService,
+	private collectionService: CollectionService,
     private fb: FormBuilder,
     public dialog: MatDialog
-  ) {}
+  	) { }
 
   ngOnInit() {
-    this.createForm = this.fb.group({
+  	this.createForm = this.fb.group({
       name: ['', [Validators.required]],
       public: false
     });
     this.collections = this.collectionService.collections;
     this.userCollections = this.collectionService.userCollections;
   }
-
   get name() {
     return this.createForm.get('name');
   }
@@ -47,7 +46,8 @@ export class CollectionsComponent implements OnInit {
       public: this.public.value
     });
   }
-  collectionCreate(collection: Collection): void {
+
+  createCollection(collection: Collection): void {
     const dialogRef = this.dialog.open(CreateCollectionComponent, {
       width: '250px',
       data: collection
@@ -57,14 +57,5 @@ export class CollectionsComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-  collectionDetail(collection: Collection): void {
-    const dialogRef = this.dialog.open(CollectionDetailComponent, {
-      width: '250px',
-      data: collection
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
 }

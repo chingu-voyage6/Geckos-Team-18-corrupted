@@ -11,6 +11,7 @@ import { LogoComponent } from '@core/components/logo/logo.component';
 import { LandingComponent } from '@core/components/landing/landing.component';
 import { SidenavComponent } from '@core/components/sidenav/sidenav.component';
 import { ExpandableSearchComponent } from '@core/components/expandable-search/expandable-search.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   imports: [CommonModule, MaterialModule, RoutingModule],
@@ -19,7 +20,8 @@ import { ExpandableSearchComponent } from '@core/components/expandable-search/ex
     LogoComponent,
     LandingComponent,
     SidenavComponent,
-    ExpandableSearchComponent
+    ExpandableSearchComponent,
+    FooterComponent
   ],
   providers: [LayoutService],
   exports: [ToolbarComponent, LogoComponent, LandingComponent, SidenavComponent]

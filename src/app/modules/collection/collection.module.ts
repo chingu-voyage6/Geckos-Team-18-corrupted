@@ -10,13 +10,13 @@ import { RoutingModule } from './routing/routing.module';
 import { CollectionService } from './services/collection.service';
 
 import { CollectionsComponent } from './components/collections/collections.component';
-import { CollectionDetailComponent } from './components/collection-detail/collection-detail.component';
+import { CreateCollectionComponent } from './components/create-collection/create-collection.component';
+import { CreateCollectionBtnComponent } from './components/create-collection-btn/create-collection-btn.component';
 
 @NgModule({
   imports: [CommonModule, RoutingModule, MaterialModule, ReactiveFormsModule],
-  declarations: [CollectionsComponent, CollectionDetailComponent],
-  exports: [CollectionsComponent, CollectionDetailComponent],
-  entryComponents: [CollectionDetailComponent],
+  declarations: [CollectionsComponent, CreateCollectionComponent, CreateCollectionBtnComponent],
+  exports: [CollectionsComponent, CreateCollectionComponent, CreateCollectionBtnComponent],
   providers: [AngularFirestore, CollectionService]
 })
 export class CollectionModule {}

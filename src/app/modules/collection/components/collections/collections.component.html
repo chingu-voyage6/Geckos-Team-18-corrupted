@@ -25,3 +25,6 @@
     <mat-icon>delete</mat-icon>
   </button>
 </mat-card>
+<app-card [card]="card" *ngFor="let card of cards | async">
+
+</app-card>

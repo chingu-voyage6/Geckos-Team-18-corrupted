@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { CollectionDetailComponent } from '../collection-detail/collection-detail.component';
 import { AuthService } from '../../../auth/services/auth.service';
+import { Card } from '../../models/card.model';
 
 @Component({
   selector: 'app-collections',
@@ -16,6 +17,7 @@ export class CollectionsComponent implements OnInit {
   collections: Observable<Collection[]>;
   userCollections: Observable<Collection[]>;
   createForm: FormGroup;
+  cards: Observable<Card[]>;
 
   constructor(
     private collectionService: CollectionService,
@@ -24,6 +26,10 @@ export class CollectionsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.cards = this.collectionService.getCollectionCards(
+      '0lcyfG6hy8Adgjl6sWOM'
+    );
+
     this.createForm = this.fb.group({
       name: ['', [Validators.required]],
       public: false

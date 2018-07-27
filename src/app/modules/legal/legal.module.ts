@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TermsandconditionsComponent } from './termsandconditions/termsandconditions.component';
-import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [TermsandconditionsComponent, PrivacypolicyComponent, DisclaimerComponent]
+  declarations: [ DisclaimerComponent, PrivacyPolicyComponent, TermsAndConditionsComponent]
 })
 export class LegalModule { }

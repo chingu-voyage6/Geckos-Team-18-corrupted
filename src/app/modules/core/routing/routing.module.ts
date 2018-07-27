@@ -5,6 +5,7 @@ import { AuthGuard } from '@auth/guards/auth.guard';
 import { UserGuard } from '@auth/guards/user.guard';
 
 import { LandingComponent } from '@core/components/landing/landing.component';
+import { DisplayNameGuard } from '@auth/guards/display-name.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,7 +16,7 @@ export const routes: Routes = [
   {
     path: 'collections',
     loadChildren: '@collection/collection.module#CollectionModule',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, DisplayNameGuard],
     resolve: {
       user: UserGuard
     }
@@ -29,6 +30,6 @@ export const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard, UserGuard]
+  providers: [AuthGuard, UserGuard, DisplayNameGuard]
 })
 export class RoutingModule {}

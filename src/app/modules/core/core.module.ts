@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MaterialModule } from '../material/material.module';
-import { RoutingModule } from './routing/routing.module';
+import { MaterialModule } from '@material/material.module';
+import { RoutingModule } from '@core/routing/routing.module';
 
-import { LayoutService } from './services/layout.service';
+import { LayoutService } from '@core/services/layout.service';
 
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { LogoComponent } from './components/logo/logo.component';
-import { LandingComponent } from './components/landing/landing.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
-import { ExpandableSearchComponent } from './components/expandable-search/expandable-search.component';
+import { ToolbarComponent } from '@core/components/toolbar/toolbar.component';
+import { LogoComponent } from '@core/components/logo/logo.component';
+import { LandingComponent } from '@core/components/landing/landing.component';
+import { SidenavComponent } from '@core/components/sidenav/sidenav.component';
+import { ExpandableSearchComponent } from '@core/components/expandable-search/expandable-search.component';
 
 @NgModule({
   imports: [CommonModule, MaterialModule, RoutingModule],

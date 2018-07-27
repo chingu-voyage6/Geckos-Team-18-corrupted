@@ -13,7 +13,7 @@ import { tap, take, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class DisplayNameGuard implements CanActivate {
   constructor(private auth: AuthService, private router: Router) {}
 
   canActivate(
@@ -23,11 +23,11 @@ export class AuthGuard implements CanActivate {
     return this.auth.user.pipe(
       take(1),
       map(user => {
-        return !!user;
+        return !!user.displayName;
       }),
       tap(authenticated => {
         if (!authenticated) {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/display-name']);
           return false;
         }
         return true;

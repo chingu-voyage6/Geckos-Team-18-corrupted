@@ -2,11 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { CollectionsComponent } from '../components/collections/collections.component';
+import {CardComponent} from '../components/card/card.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: CollectionsComponent
+  },
+  {
+    path: 'cards',
+    component: CardComponent
   }
 ];
 

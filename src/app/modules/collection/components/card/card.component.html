@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{ card.title}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-card-side [cardSide]="card.front">
+    </app-card-side>
+    <app-card-side [cardSide]="card.back">
+    </app-card-side>
+  </mat-card-content>
+</mat-card>

@@ -15,14 +15,14 @@ export const routes: Routes = [
   {
     path: 'collections',
     loadChildren: '@collection/collection.module#CollectionModule',
+    canActivate: [AuthGuard],
     resolve: {
       user: UserGuard
     }
   },
   {
     path: 'legal',
-    loadChildren: '../../legal/legal.module#LegalModule',
-
+    loadChildren: '../../legal/legal.module#LegalModule'
   }
 ];
 

@@ -44,7 +44,7 @@ span {
 }
 
 .wrapper {
-  margin: auto 0;
+  margin: 40px;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -69,6 +69,15 @@ span {
     flex: 1 1 100%;
     max-width: 100%;
     padding: 1%;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  a:hover,
+  a:visited {
+    background-color:mat-color($main-theme-accent);
   }
 }
 

@@ -18,6 +18,11 @@ export const routes: Routes = [
     resolve: {
       user: UserGuard
     }
+  },
+  {
+    path: 'legal',
+    loadChildren: '../../legal/legal.module#LegalModule',
+
   }
 ];
 

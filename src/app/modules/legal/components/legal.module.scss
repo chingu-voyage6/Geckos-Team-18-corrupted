@@ -1,0 +1,31 @@
+@import '~@angular/material/theming';
+@import '../../../../main-theme.scss';
+/* Typography */
+
+* {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+h4,
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  font-family: $special-font;
+}
+
+span {
+  display: block;
+}
+
+#white{
+  color:#fff;
+  text-decoration:none;
+}
+/* End Typography */
+
+.wrapper {
+  margin: 40px;
+  justify-content: left;
+  flex-flow: row wrap;
+}

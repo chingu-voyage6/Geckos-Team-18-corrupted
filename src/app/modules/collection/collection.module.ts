@@ -16,23 +16,32 @@ import { CollectionComponent } from '@collection/components/collection/collectio
 import { EditCollectionComponent } from './components/edit-collection/edit-collection.component';
 import { DeleteCollectionDialogComponent } from './components/delete-collection-dialog/delete-collection-dialog.component';
 import { ViewCollectionComponent } from './components/view-collection/view-collection.component';
+import { CardComponent } from './components/card/card.component';
+import { CardSideComponent } from './components/card-side/card-side.component';
 
 @NgModule({
   imports: [CommonModule, RoutingModule, MaterialModule, ReactiveFormsModule],
   declarations: [
-    CollectionComponent,
     CollectionsComponent,
     CreateCollectionComponent,
     CreateCollectionBtnComponent,
+    CollectionComponent,
     EditCollectionComponent,
     DeleteCollectionDialogComponent,
-    ViewCollectionComponent
+    ViewCollectionComponent,
+    CardComponent,
+    CardSideComponent
   ],
   exports: [
-    CollectionComponent,
     CollectionsComponent,
     CreateCollectionComponent,
-    CreateCollectionBtnComponent
+    CreateCollectionBtnComponent,
+    CollectionComponent,
+    EditCollectionComponent,
+    DeleteCollectionDialogComponent,
+    ViewCollectionComponent,
+    CardComponent,
+    CardSideComponent
   ],
   entryComponents: [DeleteCollectionDialogComponent],
   providers: [AngularFirestore, CollectionService]

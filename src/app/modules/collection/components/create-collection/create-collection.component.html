@@ -1,0 +1,7 @@
+<form (ngSubmit)="save()" [formGroup]="createForm">
+	<mat-form-field>
+    <input formControlName="name" matInput placeholder="Name">
+  </mat-form-field>
+  <mat-checkbox formControlName="public">Public?</mat-checkbox>
+  <button type="submit" color="primary" mat-raised-button >Save collection</button>
+</form>

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Collection } from '../models/collection.model';
+import { Collection } from '@collection/models/collection.model';
 import { Observable } from 'rxjs';
-import { AuthService } from '../../auth/services/auth.service';
-import { Card } from '../models/card.model';
+import { AuthService } from '@auth/services/auth.service';
+import { Card } from '@collection/models/card.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,15 @@ export class CollectionService {
         ref.where('public', '==', true)
       )
       .valueChanges();
+  }
+
+  getCollectionById(collectionId): Observable<Collection> {
+    return this.afs
+      .collection<Collection>('collections', ref =>
+        ref.where('id', '==', collectionId)
+      )
+      .valueChanges()
+      .pipe(map((collections: Collection[]) => collections[0]));
   }
 
   get userCollections(): Observable<Collection[]> {

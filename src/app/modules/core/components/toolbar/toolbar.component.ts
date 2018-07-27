@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LayoutService } from '../../services/layout.service';
+import { LayoutService } from '@core/services/layout.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,10 +7,7 @@ import { LayoutService } from '../../services/layout.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+  constructor(public layoutService: LayoutService) {}
 
-  constructor( public layoutService: LayoutService ) {}
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

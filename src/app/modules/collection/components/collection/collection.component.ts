@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collection } from '@collection/models/collection.model';
+import { MatDialog } from '@angular/material';
+import { DeleteCollectionDialogComponent } from '@collection/components/delete-collection-dialog/delete-collection-dialog.component';
 
 @Component({
   selector: 'app-collection',
@@ -9,9 +11,14 @@ import { Collection } from '@collection/models/collection.model';
 export class CollectionComponent implements OnInit {
   @Input() collection: Collection;
   @Input() actionsEnabled: boolean = true;
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
 
-  deleteCollection() {}
+  deleteCollection() {
+    this.dialog.open(DeleteCollectionDialogComponent, {
+      width: '250px',
+      data: this.collection
+    });
+  }
 }

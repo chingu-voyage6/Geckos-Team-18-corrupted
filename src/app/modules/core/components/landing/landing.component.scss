@@ -9,7 +9,7 @@
 
 #h1_title {
   color: #fff;
-  font-size: 3em;
+
   letter-spacing: 0.5em;
   text-shadow: 2px 2px 15px mat-color($main-theme-primary);
 }
@@ -31,12 +31,6 @@ span {
 
 /* End Typography */
 
-/*MAIN PAGE STYLING*/
-
-// .header{
-//   background-color: mat-color($main-theme-accent);
-// }
-
 .images img {
   margin: 10px;
 }
@@ -50,7 +44,7 @@ span {
 }
 
 .wrapper {
-  margin: auto 0;
+  margin: 40px;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -76,14 +70,27 @@ span {
     max-width: 100%;
     padding: 1%;
   }
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  a:hover,
+  a:visited {
+    background-color:mat-color($main-theme-accent);
+  }
 }
 
 /*MEDIA QUERIES*/
+@media screen and (max-width: 400px) {
+  #h1_title {
+    font-size: 1.4em;
+  }
+}
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 559px) {
   #h1_title {
     letter-spacing: 0.2em;
-    font-size: 1.3em;
   }
 
   #people {
@@ -106,6 +113,9 @@ span {
   p,
   span {
     letter-spacing: 0.2em;
+  }
+  #h1_title {
+    font-size: 3em;
   }
   h2 {
     font-size: 2em;

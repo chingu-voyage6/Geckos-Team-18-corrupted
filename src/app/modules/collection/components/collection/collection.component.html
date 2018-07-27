@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>{{collection.name}}
+    <mat-icon>{{collection.public ? 'public' : 'lock'}}</mat-icon>
+  </mat-card-title>
+  <mat-card-subtitle>{{collection.authorId}}</mat-card-subtitle>
+  <mat-card-actions *ngIf="actionsEnabled">
+    <button mat-icon-button routerLink="view/{{collection.id}}">
+      <mat-icon>view_module</mat-icon>
+    </button>
+    <button mat-icon-button routerLink="edit/{{collection.id}}">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="deleteCollection()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

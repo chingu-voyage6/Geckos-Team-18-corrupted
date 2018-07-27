@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '@auth/services/auth.service';
+import { CollectionService } from '@collection/services/collection.service';
 import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserGuard {
-  constructor(private auth: AuthService) {}
-
+export class CollectionGuard {
+  constructor(private collectionService: CollectionService) {}
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any> | Promise<any> | any {
-    return this.auth.user.pipe(take(1));
+    return this.collectionService
+      .getCollectionById(route.params.id)
+      .pipe(take(1));
   }
 }

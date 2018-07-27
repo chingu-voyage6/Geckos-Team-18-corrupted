@@ -5,14 +5,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 
-import { RoutingModule } from './routing/routing.module';
-import { MaterialModule } from '../material/material.module';
+import { RoutingModule } from '@auth/routing/routing.module';
+import { MaterialModule } from '@material/material.module';
 
-import { AuthService } from './services/auth.service';
+import { AuthService } from '@auth/services/auth.service';
 
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from '@auth/components/login/login.component';
+import { RegisterComponent } from '@auth/components/register/register.component';
+import { ProfileComponent } from '@auth/components/profile/profile.component';
 
 @NgModule({
   imports: [CommonModule, ReactiveFormsModule, RoutingModule, MaterialModule],

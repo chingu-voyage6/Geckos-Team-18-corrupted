@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CollectionService } from '../../services/collection.service';
+import { CollectionService } from '@collection/services/collection.service';
+import { Observable } from 'rxjs';
+import { Collection } from '@collection/models/collection.model';
 
 @Component({
   selector: 'app-collections',
@@ -7,13 +9,10 @@ import { CollectionService } from '../../services/collection.service';
   styleUrls: ['./collections.component.css']
 })
 export class CollectionsComponent implements OnInit {
-	
-  constructor(
-	private collectionService: CollectionService,
-	
-  	) { }
+  userCollections: Observable<Collection[]>;
+  constructor(private collectionService: CollectionService) {}
 
   ngOnInit() {
+    this.userCollections = this.collectionService.userCollections;
   }
-
 }

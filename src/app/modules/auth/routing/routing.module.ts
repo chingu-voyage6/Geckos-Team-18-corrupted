@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from '../components/login/login.component';
-import { RegisterComponent } from '../components/register/register.component';
-import { ProfileComponent } from '../components/profile/profile.component';
+import { LoginComponent } from '@auth/components/login/login.component';
+import { RegisterComponent } from '@auth/components/register/register.component';
+import { ProfileComponent } from '@auth/components/profile/profile.component';
 
 export const routes: Routes = [
   {
@@ -21,7 +21,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class RoutingModule {}

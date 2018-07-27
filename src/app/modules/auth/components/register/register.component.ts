@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service'
+import { AuthService } from '@auth/services/auth.service';
 import { Router, Params } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,17 +9,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   registerForm: FormGroup;
   passwordHidden: boolean = true;
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService, 
-    private router: Router) 
-   { }
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
-   ngOnInit() {
+  ngOnInit() {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: [
@@ -33,7 +32,7 @@ export class RegisterComponent implements OnInit {
       ]
     });
   }
- 
+
   get email() {
     return this.registerForm.get('email');
   }

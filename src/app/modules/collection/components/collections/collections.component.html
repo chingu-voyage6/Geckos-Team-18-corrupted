@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<app-collection *ngFor="let collection of userCollections | async" [collection]="collection"></app-collection>
+<app-create-collection-btn></app-create-collection-btn>
+=======
 <form class="form-field" [formGroup]="createForm" (ngSubmit)="create()" fxLayout="column" fxLayoutAlign="center center">
   <mat-form-field>
     <input matInput formControlName="name" type="text" placeholder="Enter collection name">
@@ -28,3 +32,4 @@
 <app-card [card]="card" *ngFor="let card of cards | async">
 
 </app-card>
+>>>>>>> master

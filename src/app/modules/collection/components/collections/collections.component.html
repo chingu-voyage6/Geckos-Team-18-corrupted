@@ -1,4 +1,2 @@
-<div *ngFor="let collection of collectionService.userCollections | async">
-	{{collection.name}}
-</div>
+<app-collection *ngFor="let collection of userCollections | async" [collection]="collection"></app-collection>
 <app-create-collection-btn></app-create-collection-btn>

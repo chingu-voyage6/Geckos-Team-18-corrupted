@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from '../../auth/guards/auth.guard';
-import { UserGuard } from '../../auth/guards/user.guard';
+import { AuthGuard } from '@auth/guards/auth.guard';
+import { UserGuard } from '@auth/guards/user.guard';
 
-import { LandingComponent } from '../components/landing/landing.component';
+import { LandingComponent } from '@core/components/landing/landing.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'collections',
-    loadChildren: '../../collection/collection.module#CollectionModule',
+    loadChildren: '@collection/collection.module#CollectionModule',
     resolve: {
       user: UserGuard
     }

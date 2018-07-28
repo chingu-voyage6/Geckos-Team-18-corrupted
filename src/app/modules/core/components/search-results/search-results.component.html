@@ -1,0 +1,12 @@
+<!-- <input type="text" [(ngModel)]="searchterm" (keydown)="search($event)"> -->
+
+
+
+<input type="text" #searchInput (keyup)="search(searchInput.value)" placeholder="search..." class="input">
+<ul *ngFor="let collection of collections | async">
+  <li>{{collections?.name}}</li>
+</ul>
+
+<div *ngIf="(collections$ | async)?.length < 1">
+  <p>Sorry, no collection was found.</p>
+</div>

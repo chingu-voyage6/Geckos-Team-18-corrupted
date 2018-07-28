@@ -1,0 +1,17 @@
+<ng-container *ngIf="(user | async)?.uid; else login">
+
+    <button mat-button [matMenuTriggerFor]="menu">
+        <img [src]="getGravatarImage(user.uid)">
+    </button>
+    <mat-menu #menu="matMenu" fxLayout="column" fxLayoutAlign="center center">
+        <h3>Hello {{ ( user | async )?.displayName }}!</h3>
+        <button mat-menu-item routerLink="/collections">My collections</button>
+        <button mat-menu-item (click)="signOut()">Logout</button>
+        <ng-template #spinner>
+            <mat-spinner diameter="40"></mat-spinner>
+        </ng-template>
+    </mat-menu>
+</ng-container>
+<ng-template #login>
+    <a mat-raised-button color="accent" routerLink="/login">Login</a>
+</ng-template>

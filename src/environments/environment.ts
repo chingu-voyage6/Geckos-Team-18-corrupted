@@ -6,12 +6,12 @@ export const environment = {
   production: false,
   // replace with your staging firebase config
   firebase: {
-    apiKey: 'your-staging-api-key',
-    authDomain: 'your-staging-app.firebaseapp.com',
-    databaseURL: 'https://your-staging-app.firebaseio.com',
-    projectId: 'your-staging-app',
-    storageBucket: 'your-staging-app.appspot.com',
-    messagingSenderId: 'your-staging-message-sender-id'
+    apiKey: "AIzaSyBE8zOND9ydAPzS84zpTqGIWax4a04eOrM",
+    authDomain: "chingu-angular-staging.firebaseapp.com",
+    databaseURL: "https://chingu-angular-staging.firebaseio.com",
+    projectId: "chingu-angular-staging",
+    storageBucket: "chingu-angular-staging.appspot.com",
+    messagingSenderId: "748374094250"
   }
 };
 

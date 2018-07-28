@@ -11,7 +11,8 @@ import { LogoComponent } from '@core/components/logo/logo.component';
 import { LandingComponent } from '@core/components/landing/landing.component';
 import { SidenavComponent } from '@core/components/sidenav/sidenav.component';
 import { ExpandableSearchComponent } from '@core/components/expandable-search/expandable-search.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from '@core/components/footer/footer.component';
+import { ProfileButtonComponent } from '@core/components/profile-button/profile-button.component';
 
 @NgModule({
   imports: [CommonModule, MaterialModule, RoutingModule],
@@ -21,9 +22,18 @@ import { FooterComponent } from './components/footer/footer.component';
     LandingComponent,
     SidenavComponent,
     ExpandableSearchComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileButtonComponent
   ],
   providers: [LayoutService],
-  exports: [ToolbarComponent, LogoComponent, LandingComponent, SidenavComponent]
+  exports: [
+    ToolbarComponent,
+    LogoComponent,
+    LandingComponent,
+    SidenavComponent,
+    ExpandableSearchComponent,
+    FooterComponent,
+    ProfileButtonComponent
+  ]
 })
 export class CoreModule {}

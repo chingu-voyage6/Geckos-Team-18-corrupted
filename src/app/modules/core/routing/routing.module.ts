@@ -14,7 +14,7 @@ export const routes: Routes = [
     component: LandingComponent
   },
   {
-    path: 'test',
+    path: 'search',
     component: SearchResultsComponent
   },
   {
@@ -26,8 +26,7 @@ export const routes: Routes = [
   },
   {
     path: 'legal',
-    loadChildren: '../../legal/legal.module#LegalModule',
-
+    loadChildren: '../../legal/legal.module#LegalModule'
   }
 ];
 

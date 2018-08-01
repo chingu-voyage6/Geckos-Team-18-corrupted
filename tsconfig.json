@@ -8,7 +8,8 @@
       "@collection/*": ["src/app/modules/collection/*"],
       "@core/*": ["src/app/modules/core/*"],
       "@legal/*": ["src/app/modules/legal/*"],
-      "@material/*": ["src/app/modules/material/*"]
+      "@material/*": ["src/app/modules/material/*"],
+      "@shared/*": ["src/app/modules/shared/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

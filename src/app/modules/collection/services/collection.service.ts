@@ -4,7 +4,12 @@ import { Collection } from '@collection/models/collection.model';
 import { Observable } from 'rxjs';
 import { AuthService } from '@auth/services/auth.service';
 import { Card } from '@collection/models/card.model';
-import { map } from 'rxjs/operators';
+import {
+  map,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap
+} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -83,5 +88,24 @@ export class CollectionService {
     return this.afs
       .doc(`collections/${collectionId}/cards/${card.id}`)
       .delete();
+  }
+
+  search(terms: Observable<string>): Observable<Collection[]> {
+    return terms.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      switchMap(term => this.searchQuery(term))
+    );
+  }
+
+  private searchQuery(searchTerm: string): Observable<Collection[]> {
+    return this.afs
+      .collection<Collection>('collections', ref =>
+        ref
+          .orderBy('name')
+          .startAt(searchTerm)
+          .endAt(searchTerm + '\uf8ff')
+      )
+      .valueChanges();
   }
 }

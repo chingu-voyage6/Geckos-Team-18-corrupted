@@ -6,6 +6,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-expandable-search',
@@ -36,7 +37,7 @@ export class ExpandableSearchComponent {
   @ViewChild('container') container;
   @ViewChild('search') search: ElementRef;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
     document.addEventListener('click', this.offClickHandler.bind(this));
   }
 
@@ -46,8 +47,12 @@ export class ExpandableSearchComponent {
 
   offClickHandler(event: any) {
     if (!this.container.nativeElement.contains(event.target) && this.show) {
-      this.show = false;
-      this.search.nativeElement.value = '';
+      if (!this.route.snapshot.queryParams.q) {
+        this.search.nativeElement.value = '';
+        this.show = false;
+      } else if (!this.search.nativeElement.value) {
+        this.show = false;
+      }
     }
   }
 
@@ -56,5 +61,9 @@ export class ExpandableSearchComponent {
     if (this.show) {
       this.search.nativeElement.focus();
     }
+  }
+
+  gotToSearchResults(term) {
+    this.router.navigate(['search'], { queryParams: { q: term } });
   }
 }

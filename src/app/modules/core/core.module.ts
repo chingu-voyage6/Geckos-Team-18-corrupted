@@ -14,9 +14,16 @@ import { ExpandableSearchComponent } from '@core/components/expandable-search/ex
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, MaterialModule, RoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    RoutingModule,
+    FormsModule,
+    SharedModule
+  ],
   declarations: [
     ToolbarComponent,
     LogoComponent,
@@ -27,6 +34,14 @@ import { FormsModule } from '@angular/forms';
     SearchResultsComponent
   ],
   providers: [LayoutService],
-  exports: [ToolbarComponent, LogoComponent, LandingComponent, SidenavComponent]
+  exports: [
+    ToolbarComponent,
+    LogoComponent,
+    LandingComponent,
+    SidenavComponent,
+    ExpandableSearchComponent,
+    FooterComponent,
+    SearchResultsComponent
+  ]
 })
 export class CoreModule {}

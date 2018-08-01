@@ -1,12 +1,1 @@
-
-<p>Find a collection:
-<input type="text" [(ngModel)]="searchterm" placeholder="search..."  (keydown)="search($event)"></p>
-<p>Collections available</p>
-<ul *ngFor="let collection of collections ">
-  
-  <li>{{collection.name}} + <em>Link to collection?</em></li> 
-</ul>
-
-<div *ngIf="collections?.length < 1 ">
-  <p><strong>No luck!</strong> No collection was found.</p>
-</div>
+<app-collection *ngFor="let collection of collections" [collection]="collection" [actionsEnabled]="false"></app-collection>

@@ -1,9 +1,8 @@
 <div #container fxLayout="row" fxLayoutAlign="center center">
   <div fxFlex>
     <mat-form-field [@expand]="state" name="search" floatLabel="never">
-      <input matInput #search placeholder="Search" type="text" [(ngModel)]="searchterm" (keydown)="search($event)">
+      <input matInput #search placeholder="Search" type="text" (keyup)="gotToSearchResults($event.target.value)" autocomplete="off">
     </mat-form-field>
-    <!-- <app-search-results></app-search-results> -->
   </div>
   <button mat-icon-button (click)="toggle()">
     <mat-icon>search</mat-icon>

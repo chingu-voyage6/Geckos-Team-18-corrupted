@@ -4,6 +4,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+### Project: ###
+
+Create a repository of user-tailored flash cards, compiled in collections. The collections can be made public or private, and users can log in to access their own private collections.
+#### MVP ####
+
+#### Beyond MVP ####
+
+### The Team: ###
+| Name      | Location  | Handles...      |
+| :-------- | :-------- | :--------- |
+| Vytautas  | Lithuania | [email](#) |
+| Anton     | Ukraine   | [email](#) |
+| Veronique | Ireland   | [email](#) |
+
+### Waffle Board ###
+[Geckos-Team-18](https://waffle.io/chingu-voyage6/Geckos-Team-18)
+[![Throughput Graph](https://graphs.waffle.io/chingu-voyage6/Geckos-Team-18/throughput.svg)](https://waffle.io/chingu-voyage6/Geckos-Team-18/metrics/throughput)
+
+### User Stories ###
+[Click here](https://docs.google.com/spreadsheets/d/19QA2GLMYUWYYiWeVifXv72iCkzWuYLb5Ez6aWOluKlM/edit?usp=sharing)
+
+
+
+
 ## Project on the web
 
 Our production app [https://chingu-angular.firebaseapp.com/](https://chingu-angular.firebaseapp.com/).

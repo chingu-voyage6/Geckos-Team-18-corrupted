@@ -4,19 +4,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-### Project: ###
-
+## Our Project ##
+### Breezy Cards ##
 Create a repository of user-tailored flash cards, compiled in collections. The collections can be made public or private, and users can log in to access their own private collections.
 #### MVP ####
 
 #### Beyond MVP ####
 
-### The Team: ###
+### :sparkles: The Team: :sparkles: ###
 | Name      | Location  | Handles...      |
 | :-------- | :-------- | :--------- |
-| Vytautas  | Lithuania | [email](#) |
-| Anton     | Ukraine   | [email](#) |
-| Veronique | Ireland   | [email](#) |
+| Vytautas (Team Lead) | Lithuania | [@](#) |
+| Anton     | Ukraine   | [@](#) |
+| Veronique | Ireland   | [@](#) |
 
 ### Waffle Board ###
 [Geckos-Team-18](https://waffle.io/chingu-voyage6/Geckos-Team-18)
@@ -25,8 +25,7 @@ Create a repository of user-tailored flash cards, compiled in collections. The c
 ### User Stories ###
 [Click here](https://docs.google.com/spreadsheets/d/19QA2GLMYUWYYiWeVifXv72iCkzWuYLb5Ez6aWOluKlM/edit?usp=sharing)
 
-
-
+### Hurdles :boom: ###
 
 ## Project on the web
 

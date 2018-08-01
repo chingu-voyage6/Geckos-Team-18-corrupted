@@ -1,8 +1,12 @@
-<input type="text" [(ngModel)]="searchterm" (keydown)="search($event)">
+
+<p>Find a collection:
+<input type="text" [(ngModel)]="searchterm" placeholder="search..."  (keydown)="search($event)"></p>
+<p>Collections available</p>
 <ul *ngFor="let collection of collections ">
-  <li>{{collection.name}}</li>
+  
+  <li>{{collection.name}} + <em>Link to collection?</em></li> 
 </ul>
 
-<div *ngIf="(collection)?.length < 1">
-  <p>Sorry, no collection was found.</p>
+<div *ngIf="collections?.length < 1 ">
+  <p><strong>No luck!</strong> No collection was found.</p>
 </div>

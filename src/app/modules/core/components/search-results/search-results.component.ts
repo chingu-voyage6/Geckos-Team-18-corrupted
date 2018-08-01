@@ -3,7 +3,7 @@ import { Collection } from '@collection/models/collection.model';
 
 import { AngularFirestore } from 'angularfire2/firestore';
 
-import { combineLatest, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Subject } from 'rxjs';
 
 
 @Component({
@@ -11,14 +11,14 @@ import { combineLatest, Subject } from 'rxjs';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css']
 })
-
 export class SearchResultsComponent implements OnInit {
   searchterm: string;
-
   lastKeypress: 0;
 
   startAt = new Subject();
   endAt = new Subject();
+  // startAt: BehaviorSubject<string | null> = new BehaviorSubject('');
+  // endAt: BehaviorSubject<string | null> = new BehaviorSubject('\uf8ff');
 
   collections: Collection[];
   allCollections;
@@ -48,13 +48,11 @@ export class SearchResultsComponent implements OnInit {
     this.lastKeypress = $event.timeStamp;
   }
 
-
-
   firequery(start, end) {
     return this.afs
       .collection<Collection>('collections', ref =>
         ref
-          .limit(5)
+          // .limit(5)
           .orderBy('name')
           .startAt(start)
           .endAt(end)

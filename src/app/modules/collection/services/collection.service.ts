@@ -50,6 +50,7 @@ export class CollectionService {
     return this.afs
       .collection<Collection>('collections')
       .add(collection)
+      // tslint:disable-next-line:no-shadowed-variable
       .then(collection => {
         collection.update({ id: collection.id });
       });
@@ -73,6 +74,7 @@ export class CollectionService {
     return this.afs
       .collection<Card>(`collections/${collectionId}/cards`)
       .add(card)
+      // tslint:disable-next-line:no-shadowed-variable
       .then(card => {
         card.update({ id: card.id });
       });
@@ -102,6 +104,7 @@ export class CollectionService {
     return this.afs
       .collection<Collection>('collections', ref =>
         ref
+          .where('public', '==', true)
           .orderBy('name')
           .startAt(searchTerm)
           .endAt(searchTerm + '\uf8ff')

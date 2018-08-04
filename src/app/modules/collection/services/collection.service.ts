@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  CollectionReference,
+  Query
+} from 'angularfire2/firestore';
 import { Collection } from '@collection/models/collection.model';
 import { Observable, combineLatest } from 'rxjs';
 import { AuthService } from '@auth/services/auth.service';
@@ -105,7 +110,7 @@ export class CollectionService {
   }
 
   private searchQuery(searchTerm: string): Observable<Collection[]> {
-    return combineLatest (this.afs
+    const shared = this.afs
       .collection<Collection>('collections', ref =>
         ref
           .where('public', '==', true)
@@ -113,21 +118,27 @@ export class CollectionService {
           .startAt(searchTerm)
           .endAt(searchTerm + '\uf8ff')
       )
-      .valueChanges(),
-      this.afs
+      .valueChanges();
+
+    if (this.authService.currentUser) {
+      const authored = this.afs
         .collection<Collection>('collections', ref =>
           ref
-            .where('public', '==', false)
             .where('authorId', '==', this.authService.uid)
+            .where('public', '==', false)
             .orderBy('name')
             .startAt(searchTerm)
             .endAt(searchTerm + '\uf8ff')
         )
-        .valueChanges()
-      )
-      .pipe(map(([shared, authored]) => {
-        return [...shared, ...authored];
-      })
+        .valueChanges();
+
+      return combineLatest(shared, authored).pipe(
+        map(([shared, authored]) => {
+          return [...shared, ...authored];
+        })
       );
     }
+
+    return shared;
+  }
 }

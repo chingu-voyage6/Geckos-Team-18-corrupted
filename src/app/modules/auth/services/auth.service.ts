@@ -34,8 +34,16 @@ export class AuthService {
     );
   }
 
+  get state() {
+    return this.afAuth.auth;
+  }
+
+  get currentUser() {
+    return this.state.currentUser;
+  }
+
   get uid(): string {
-    return this.afAuth.auth.currentUser.uid;
+    return this.state.currentUser.uid;
   }
 
   anonymousSignIn() {

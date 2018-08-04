@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Collection } from '@collection/models/collection.model';
-import { Observable } from 'rxjs';
+import { Observable, combineLatest } from 'rxjs';
 import { AuthService } from '@auth/services/auth.service';
 import { Card } from '@collection/models/card.model';
 import {
@@ -47,13 +47,15 @@ export class CollectionService {
 
   createCollection(collection: Collection) {
     collection.authorId = this.authService.uid;
-    return this.afs
-      .collection<Collection>('collections')
-      .add(collection)
-      // tslint:disable-next-line:no-shadowed-variable
-      .then(collection => {
-        collection.update({ id: collection.id });
-      });
+    return (
+      this.afs
+        .collection<Collection>('collections')
+        .add(collection)
+        // tslint:disable-next-line:no-shadowed-variable
+        .then(collection => {
+          collection.update({ id: collection.id });
+        })
+    );
   }
 
   updateCollection(collection: Collection) {
@@ -71,13 +73,15 @@ export class CollectionService {
   }
 
   createCollectionCard(collectionId: string, card: Card) {
-    return this.afs
-      .collection<Card>(`collections/${collectionId}/cards`)
-      .add(card)
-      // tslint:disable-next-line:no-shadowed-variable
-      .then(card => {
-        card.update({ id: card.id });
-      });
+    return (
+      this.afs
+        .collection<Card>(`collections/${collectionId}/cards`)
+        .add(card)
+        // tslint:disable-next-line:no-shadowed-variable
+        .then(card => {
+          card.update({ id: card.id });
+        })
+    );
   }
 
   updateCollectionCard(collectionId: string, card: Card) {
@@ -101,7 +105,7 @@ export class CollectionService {
   }
 
   private searchQuery(searchTerm: string): Observable<Collection[]> {
-    return this.afs
+    return combineLatest (this.afs
       .collection<Collection>('collections', ref =>
         ref
           .where('public', '==', true)
@@ -109,6 +113,21 @@ export class CollectionService {
           .startAt(searchTerm)
           .endAt(searchTerm + '\uf8ff')
       )
-      .valueChanges();
-  }
+      .valueChanges(),
+      this.afs
+        .collection<Collection>('collections', ref =>
+          ref
+            .where('public', '==', false)
+            .where('authorId', '==', this.authService.uid)
+            .orderBy('name')
+            .startAt(searchTerm)
+            .endAt(searchTerm + '\uf8ff')
+        )
+        .valueChanges()
+      )
+      .pipe(map(([shared, authored]) => {
+        return [...shared, ...authored];
+      })
+      );
+    }
 }

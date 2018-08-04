@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Collection } from '@collection/models/collection.model';
+import { AuthService } from '@auth/services/auth.service';
 
 @Component({
   selector: 'app-collection',
@@ -8,8 +9,8 @@ import { Collection } from '@collection/models/collection.model';
 })
 export class CollectionComponent implements OnInit {
   @Input() collection: Collection;
-  @Input() actionsEnabled: boolean = true;
-  constructor() {}
+
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {}
 

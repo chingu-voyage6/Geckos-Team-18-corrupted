@@ -7,10 +7,10 @@
     <button mat-icon-button routerLink="/collections/view/{{collection.id}}">
       <mat-icon>view_module</mat-icon>
     </button>
-    <button mat-icon-button *ngIf="actionsEnabled" routerLink="edit/{{collection.id}}">
+    <button mat-icon-button *ngIf="authService.uid === collection.authorId" routerLink="edit/{{collection.id}}">
       <mat-icon>edit</mat-icon>
     </button>
-    <button mat-icon-button *ngIf="actionsEnabled" (click)="deleteCollection()">
+    <button mat-icon-button *ngIf="authService.uid === collection.authorId" (click)="deleteCollection()">
       <mat-icon>delete</mat-icon>
     </button>
   </mat-card-actions>

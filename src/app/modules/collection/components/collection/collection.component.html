@@ -1,17 +1,17 @@
-<mat-card>
-  <mat-card-title>{{collection.name}}
+<mat-card fxLayout="column" fxLayoutAlign="center center" fxFlex>
+  <mat-card-title class="title"><span>Collection's name:</span> {{collection.name}}
     <mat-icon>{{collection.public ? 'public' : 'lock'}}</mat-icon>
   </mat-card-title>
-  <mat-card-subtitle>{{collection.authorId}}</mat-card-subtitle>
+  <mat-card-subtitle class="subtitle"><span>Collection's author:</span> {{collection.authorId}}</mat-card-subtitle>
   <mat-card-actions *ngIf="actionsEnabled">
     <button mat-icon-button routerLink="view/{{collection.id}}">
-      <mat-icon>view_module</mat-icon>
+      <mat-icon color="primary">view_module</mat-icon>
     </button>
     <button mat-icon-button routerLink="edit/{{collection.id}}">
-      <mat-icon>edit</mat-icon>
+      <mat-icon color="accent">edit</mat-icon>
     </button>
     <button mat-icon-button (click)="deleteCollection()">
-      <mat-icon>delete</mat-icon>
+      <mat-icon color="warn">delete</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>

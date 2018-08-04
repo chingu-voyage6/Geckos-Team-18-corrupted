@@ -18,6 +18,10 @@ import { DeleteCollectionDialogComponent } from './components/delete-collection-
 import { ViewCollectionComponent } from './components/view-collection/view-collection.component';
 import { CardComponent } from './components/card/card.component';
 import { CardSideComponent } from './components/card-side/card-side.component';
+import { CreateCardBtnComponent } from './components/create-card-btn/create-card-btn.component';
+import { CreateCardComponent } from './components/create-card/create-card.component';
+import { EditCardComponent } from './components/edit-card/edit-card.component';
+import { DeleteCardDialogComponent } from './components/delete-card-dialog/delete-card-dialog.component';
 
 @NgModule({
   imports: [CommonModule, RoutingModule, MaterialModule, ReactiveFormsModule],
@@ -30,7 +34,11 @@ import { CardSideComponent } from './components/card-side/card-side.component';
     DeleteCollectionDialogComponent,
     ViewCollectionComponent,
     CardComponent,
-    CardSideComponent
+    CardSideComponent,
+    CreateCardBtnComponent,
+    CreateCardComponent,
+    EditCardComponent,
+    DeleteCardDialogComponent
   ],
   exports: [
     CollectionsComponent,

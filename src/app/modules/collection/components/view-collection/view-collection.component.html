@@ -1,3 +1,4 @@
-<p>
-  view-collection works!
-</p>
+<div class="wrapper"><div fxFill fxLayout="row wrap" fxLayoutGap="0.5%" fxLayoutAlign="center">
+	<app-card fxFlex="30" *ngFor="let card of collection.cards" [card]="card"></app-card>
+</div></div>
+<app-create-card-btn></app-create-card-btn>

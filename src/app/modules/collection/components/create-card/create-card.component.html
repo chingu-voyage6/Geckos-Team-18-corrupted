@@ -1,0 +1,12 @@
+<form (ngSubmit)="save()" [formGroup]="createCard" fxLayout="column" fxLayoutAlign="center center" fxFlex>
+	<mat-form-field>
+    <input formControlName="name" matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="front" matInput placeholder="Front">
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="back" matInput placeholder="Back">
+  </mat-form-field>
+  <button type="submit" color="primary" mat-raised-button >Save card</button>
+</form>

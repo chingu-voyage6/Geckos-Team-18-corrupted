@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {GridModule} from '@angular/flex-layout/grid';
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -75,7 +76,8 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    GridModule
   ]
 })
 export class MaterialModule {}

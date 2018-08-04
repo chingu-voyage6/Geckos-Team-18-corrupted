@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Collection } from '@collection/models/collection.model';
 
+
 @Component({
   selector: 'app-view-collection',
   templateUrl: './view-collection.component.html',
@@ -13,5 +14,6 @@ export class ViewCollectionComponent implements OnInit {
 
   ngOnInit() {
     this.collection = this.route.snapshot.data.collection;
+    this.collection.cards = this.route.snapshot.data.cards;
   }
 }

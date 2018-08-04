@@ -1,6 +1,6 @@
-<form (ngSubmit)="save()" [formGroup]="editForm">
+<form (ngSubmit)="save()" [formGroup]="editForm" fxLayout="column" fxLayoutAlign="center center" fxFlex>
   <mat-form-field>
-    <input formControlName="name" matInput placeholder="Name">
+    <input class="input" formControlName="name" matInput placeholder="Name">
   </mat-form-field>
   <mat-checkbox formControlName="public">Public?</mat-checkbox>
   <button type="submit" color="primary" mat-raised-button>Save collection</button>

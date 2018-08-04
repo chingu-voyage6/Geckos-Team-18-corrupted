@@ -1,0 +1,20 @@
+:host {
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+span {
+	color: black;
+}
+
+.title {
+	font-size: 35px;
+	color: #00bcd4;
+}
+
+.subtitle {
+	font-size: 20px;
+	color: #ff4081;
+}
